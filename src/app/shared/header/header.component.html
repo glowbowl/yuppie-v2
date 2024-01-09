@@ -1,0 +1,32 @@
+<header class="sticky top-0 bg-black text-white px-8 py-5 md:px-16 md:py-7 z-10">
+  <div class="flex justify-between items-center max-w-screen-2xl mx-auto my-0 w-full">
+    <!-- Mobile Menu Button (for small screens) -->
+    <button class="md:hidden flex items-center" id="mobile-menu-button" (click)="toggleMobileMenu()">
+      <span class="text-2xl">&#9776;</span>
+    </button>
+    <div class="md:hidden flex w-full">
+      <div class="flex items-center w-full justify-center">
+        <img src="./assets/img/white_logo.png" alt="Logo" class="h-12 mr-2">
+      </div>
+    </div>
+    <!-- Mobile Menu (for small screens) -->
+    <div [ngStyle]="{display: isMobileMenuVisible ? 'unset' : 'none'}" class="fixed top-0 left-0 right-0 bottom-0 bg-black text-white z-50 hidden" id="mobile-menu">
+      <nav class="flex flex-col space-y-2 p-4">
+        <a routerLink="/" class="hover:text-gray-300">Home</a>
+        <a routerLink="/products" class="hover:text-gray-300">Products</a>
+        <a routerLink="/coop" class="hover:text-gray-300">Coop</a>
+        <a routerLink="/location" class="hover:text-gray-300">Location</a>
+      </nav>
+    </div>
+
+    <div class="hidden md:flex items-center">
+      <img src="./assets/img/white_logo.png" alt="Logo" class="h-14 mr-2">
+    </div>
+    <nav class="hidden md:flex space-x-10 font-bold text-lg">
+      <a routerLink="/">Home</a>
+      <a routerLink="/products">Products</a>
+      <a routerLink="/coop">Coop</a>
+      <a routerLink="/location">Location</a>
+    </nav>
+  </div>
+</header>
