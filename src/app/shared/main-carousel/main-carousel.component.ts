@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'yup-main-carousel',
@@ -9,15 +9,25 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, E
   styleUrl: './main-carousel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainCarouselComponent implements AfterViewInit {
+export class MainCarouselComponent implements OnInit, AfterViewInit {
   @Input() items: any[] = [];
   @ViewChild('progress') progress!: ElementRef<any>;
   public currentIndex = 0;
   public showProgressBar = true;
+  public imageDesktop = true;
 
   constructor(
       private cdr: ChangeDetectorRef
     ) {}
+
+  ngOnInit(): void {
+    const device = navigator.userAgent;
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(device)) {
+      this.imageDesktop = false;
+    } else {
+      this.imageDesktop = true;
+    }
+  }
 
   ngAfterViewInit(): void {
     this.startCarousel();

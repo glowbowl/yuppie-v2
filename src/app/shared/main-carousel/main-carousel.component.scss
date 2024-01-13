@@ -19,11 +19,6 @@
   background-size: cover;
 }
 
-.btn {
-  margin-top: 10px;
-  cursor: pointer;
-}
-
 .progress {
   height: 5px;
   flex-grow: 1;
@@ -60,6 +55,6 @@
 
 @media (max-width: 620px) {
   .carousel-container {
-    height: 60vh;
+    height: 65vh;
   }
 }
