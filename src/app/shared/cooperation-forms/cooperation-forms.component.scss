@@ -1,0 +1,46 @@
+:host {
+  .formControls {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .submitLabel {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .submitInputContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .submitInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border-radius: 24px;
+    border: 1px solid lightgray;
+    height: 50px;
+  }
+
+  .error-message {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: -35px;
+  }
+
+  .error-input-message {
+    color: red;
+    position: absolute;
+    bottom: -30px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}

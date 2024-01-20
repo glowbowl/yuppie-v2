@@ -1,0 +1,27 @@
+.carousel-container {
+  overflow: hidden;
+  height: 60vh;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item-container {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media (max-width: 620px) {
+  .carousel-container {
+    height: 60vh;
+  }
+}

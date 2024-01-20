@@ -1,0 +1,60 @@
+<div class="flex w-full" style="color: #3e3e3e;">
+  <div class="w-1/2 flex gap-24 flex-col leading-snug">
+    <div class="flex flex-col w-4/5">
+      <div class="uppercase text-4xl font-bold">
+        DOWIEDZ SIĘ WIĘCEJ O NASZYCH PRODUKTACH
+      </div>
+      <div class="font-bold" style="color: #6a6a6a;">
+        Jeśli jesteś zainteresowany zakupem hurtowym skontaktuj się z naszym biurem.
+      </div>
+    </div>
+    <div class="text-4xl font-bold w-4/5">
+      Jeśli jesteś naszym klientem skonfiguruj swoją półkę kasową i zamów ekspozytor YUPPIE
+    </div>
+  </div>
+  <div class="w-1/2 flex justify-center">
+    <div class="rounded-3xl bg-white flex flex-col items-center h-full w-3/4 py-12 px-10">
+      <div class="text-3xl font-bold w-2/3 text-center mb-6">Zapraszamy do współpracy</div>
+      <div class="flex w-full flex-col mb-11">
+        <div class="formControls">
+          <label class="submitLabel" for="name">Imię i nazwisko <span class="text-red-600">*</span></label>
+          <div class="submitInputContainer">
+              <input class="submitInput" type="text" id="name" name="name" placeholder="Wpisz swoje imię" onchange="validateName()" required>
+              <div class="error-input-message" id="error-name"></div>
+          </div>
+        </div>
+
+        <div class="formControls">
+            <label class="submitLabel" for="number">E-mail <span class="text-red-600">*</span></label>
+            <div class="submitInputContainer">
+                <input class="submitInput" type="e-mail" id="emailOrder" name="e-mail" placeholder="Twoja poczta" oninput="validateEmail('emailOrder')" required>
+                <div class="error-input-message" id="emailOrderError"></div>
+            </div>
+        </div>
+
+        <div class="formControls">
+            <label class="submitLabel" for="number">Telefon <span class="text-red-600">*</span></label>
+            <div class="submitInputContainer">
+                <input class="submitInput" type="text" id="number" name="number" placeholder="Wprowadź numer" oninput="validateNumber(this)" required>
+                <div class="error-input-message" id="error-number"></div>
+            </div>
+        </div>
+
+        <div class="formControls">
+          <label class="submitLabel" for="number">Wiadomość</label>
+          <div class="submitInputContainer">
+              <input class="submitInput" type="text" id="name" name="name" placeholder="Wpisz swoje imię" onchange="validateName()" required>
+              <div class="error-input-message" id="error-number"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="w-full" style="border-top: 1px solid lightgrey;"></div>
+
+      <div class="text-sm leading-tight mb-6" style="color: #444444;">Administratorem danych osobowych jest NiX Group Sp. z.o.o. z siedzibą w Przemyślie. Dane osobowe będą przetwarzane w celu identyfikacji nadawcy oraz obsługi zapytania przesłanego przez udostępniony formularz. Więcej informacji o przetwarzaniu danych osobowych, w tym o przysługujących Państwu uprawnieniach, znajduje się w Polityce prywatności</div>
+
+      <button class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded-3xl hover:text-gray-200 uppercase bg-black">Wyślij zapytanie</button>
+    </div>
+  </div>
+</div>
