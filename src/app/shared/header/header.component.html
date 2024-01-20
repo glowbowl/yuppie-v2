@@ -23,11 +23,22 @@
     <div class="hidden md:flex items-center cursor-pointer">
       <img src="./assets/img/white_logo.png" alt="Logo" class="h-14 mr-2">
     </div>
-    <nav class="hidden md:flex space-x-10 font-bold text-lg uppercase">
+    <nav class="hidden md:flex space-x-10 font-semibold text-lg uppercase">
       <a class="cursor-pointer hover:text-gray-400" routerLink="/">Home</a>
-      <a class="cursor-pointer hover:text-gray-400" routerLink="/products">Produkty</a>
-      <a class="cursor-pointer hover:text-gray-400" routerLink="/coop">Współpraca</a>
+      <div class="relative" (click)="showDropdown = !showDropdown">
+        <a class="cursor-pointer hover:text-gray-400">Produkty</a>
+
+        <div *ngIf="showDropdown" class="absolute -left-3 mt-4 bg-black shadow-md z-10 text-base">
+          <ul class="py-2" style="width: 175px;">
+            <li class="cursor-pointer px-4 py-2" routerLink="/product">Yuppie 700</li>
+            <li class="cursor-pointer px-4 py-2" routerLink="/product">Yuppie 1000 (v1)</li>
+            <li class="cursor-pointer px-4 py-2" routerLink="/product">Yuppie 1000 (v2)</li>
+          </ul>
+        </div>
+      </div>
+      <a class="cursor-pointer hover:text-gray-400" routerLink="/cooperation">Współpraca</a>
       <a class="cursor-pointer hover:text-gray-400" routerLink="/location">Lokalizacje</a>
+      <a class="cursor-pointer hover:text-gray-400" routerLink="/about-us">O nas</a>
     </nav>
   </div>
 </header>

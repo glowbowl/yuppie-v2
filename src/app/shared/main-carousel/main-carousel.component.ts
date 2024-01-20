@@ -11,6 +11,8 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, E
 })
 export class MainCarouselComponent implements OnInit, AfterViewInit {
   @Input() items: any[] = [];
+  @Input() showTitle = false;
+  @Input() showButton = true;
   @ViewChild('progress') progress!: ElementRef<any>;
   public currentIndex = 0;
   public showProgressBar = true;
@@ -30,7 +32,12 @@ export class MainCarouselComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.startCarousel();
+    if ( this.items.length > 1 ) {
+      this.startCarousel();
+    } else {
+      this.showProgressBar = false;
+      this.cdr.detectChanges();
+    }
   }
 
   public nextSlide() {
