@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
@@ -14,6 +14,9 @@ import { AgeRestrictionDialogComponent } from './shared/age-restriction-dialog/a
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  @HostBinding('class.pos-fixed') setStyleIfMobileSidebar: boolean = false;
+  public isSidebarOpen = false;
+
   constructor(public dialog: MatDialog){}
 
   ngOnInit(): void {
@@ -23,5 +26,10 @@ export class AppComponent implements OnInit {
         autoFocus: false,
       });
     }
+  }
+
+  public setMobileMenuOpen(isOpen: boolean): void {
+    this.isSidebarOpen = isOpen;
+    this.setStyleIfMobileSidebar = isOpen;
   }
 }
