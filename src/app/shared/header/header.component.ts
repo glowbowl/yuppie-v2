@@ -32,6 +32,12 @@ import { NavigationEnd, NavigationStart, Router, RouterLink } from '@angular/rou
       ),
       transition('void <=> *', animate(100)),
     ]),
+    trigger('slideInOut', [
+      state('in', style({ height: '*', opacity: 1 })),
+      state('out', style({ height: '0', opacity: 0.25, marginTop: 0 })),
+      transition('in => out', animate('0.25s ease-in-out')),
+      transition('out => in', animate('0.25s ease-in-out')),
+    ]),
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
