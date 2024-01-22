@@ -1,7 +1,20 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
+import { NavigationEnd, NavigationStart, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'yup-header',
@@ -11,19 +24,47 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss',
   animations: [
     trigger('fadeInOut', [
-      state('void', style({
-        opacity: 0
-      })),
+      state(
+        'void',
+        style({
+          opacity: 0,
+        })
+      ),
       transition('void <=> *', animate(100)),
     ]),
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterContentInit, AfterViewInit {
+  @Output() isMobileMenu = new EventEmitter<boolean>();
   public isMobileMenuVisible = false;
   public showDropdown = false;
+  private burgerMenu!: any;
+
+  constructor(private router: Router) {}
+
+  ngAfterViewInit(): void {
+    this.burgerMenu = document.getElementById('nav-icon1');
+    console.log(this.burgerMenu);
+
+  }
+
+  ngAfterContentInit(): void {
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationStart) {
+        console.log('instanceof trigg');
+
+        if(this.isMobileMenuVisible) {
+          console.log('is mobile');
+
+          this.toggleMobileMenu();
+        }
+      }
+    });
+  }
 
   public toggleMobileMenu(): void {
     this.isMobileMenuVisible = !this.isMobileMenuVisible;
+    this.isMobileMenu.emit(this.isMobileMenuVisible);
   }
 }

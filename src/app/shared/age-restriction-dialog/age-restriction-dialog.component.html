@@ -1,21 +1,21 @@
 <div
-  class="flex flex-col justify-center items-center w-full h-[45vh] md:w-[480px] md:h-[36vh]"
+  class="flex flex-col justify-center items-center w-full h-full md:w-[480px] pb-6"
 >
   <header>
-    <img src="./assets/img/black_logo.png" alt="Logo" class="h-60 w-full" />
+    <img src="./assets/img/black_logo.png" alt="Logo" class="h-48 md:h-52 w-full" />
   </header>
   <div mat-dialog-actions class="gap-5 flex-col md:flex-row">
     <button
-      (click)="onNoClick()"
-      class="text-red-500 border-solid border-2 border-red-500 py-2 uppercase py-2 px-6 rounded hover:bg-red-500 hover:text-white duration-300 w-48"
-    >
-      Nie mam 18 lat
-    </button>
-    <button
       (click)="onYesClick()"
-      class="text-green-500 border-solid border-2 border-green-500 py-2 uppercase py-2 px-6 rounded hover:bg-green-500 hover:text-white duration-300 w-48"
+      class="text-green-500 border-solid border-2 border-green-500 py-2 uppercase px-6 rounded hover:bg-green-500 hover:text-white duration-300 w-48"
     >
       Mam 18 lat
+    </button>
+    <button
+      (click)="onNoClick()"
+      class="text-red-500 border-solid border-2 border-red-500 py-2 uppercase px-6 rounded hover:bg-red-500 hover:text-white duration-300 w-48"
+    >
+      Nie mam 18 lat
     </button>
   </div>
 </div>

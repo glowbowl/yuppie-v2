@@ -1,0 +1,13 @@
+.main-content {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+
+  &.sidebar-open {
+    transform: translateX(50%);
+    overflow: hidden;
+  }
+}
+
+:host.pos-fixed {
+  position: fixed;
+}
