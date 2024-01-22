@@ -44,10 +44,22 @@
 <!-- Mobile Menu (for small screens) -->
 <div class="sidebar bg-black text-white font-semibold" [class.open]="isMobileMenuVisible">
   <nav class="flex flex-col space-y-6 px-4 py-10 uppercase items-center">
-    <a routerLink="/" class="hover:text-gray-300">Home</a>
-    <a routerLink="/products" class="hover:text-gray-300">Produkty</a>
-    <a routerLink="/cooperation" class="hover:text-gray-300">Współpraca</a>
-    <a routerLink="/location" class="hover:text-gray-300">Lokalizacje</a>
-    <a routerLink="/about-us" class="hover:text-gray-300">O nas</a>
+    <a routerLink="/" class="">Home</a>
+    <a (click)="showDropdown = !showDropdown" class="">Produkty</a>
+
+    <div [@slideInOut]="showDropdown ? 'in' : 'out'"
+    class="transition-transform duration-500 ease-in-out"
+    [style.overflow]="showDropdown ? 'visible' : 'hidden'"
+    >
+      <ul class="" style="width: 175px;">
+        <li class="cursor-pointer px-4 py-2 flex justify-center" routerLink="/product">Yuppie 700</li>
+        <li class="cursor-pointer px-4 py-2 flex justify-center" routerLink="/product">Yuppie 1000 (v1)</li>
+        <li class="cursor-pointer px-4 py-2 flex justify-center" routerLink="/product">Yuppie 1000 (v2)</li>
+      </ul>
+    </div>
+
+    <a routerLink="/cooperation" class="">Współpraca</a>
+    <a routerLink="/location" class="">Lokalizacje</a>
+    <a routerLink="/about-us" class="">O nas</a>
   </nav>
 </div>
