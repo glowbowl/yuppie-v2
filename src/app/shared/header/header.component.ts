@@ -8,13 +8,12 @@ import {
 import { CommonModule } from '@angular/common';
 import {
   AfterContentInit,
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Output,
 } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router, RouterLink } from '@angular/router';
+import { NavigationStart, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'yup-header',
@@ -41,29 +40,20 @@ import { NavigationEnd, NavigationStart, Router, RouterLink } from '@angular/rou
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements AfterContentInit, AfterViewInit {
+export class HeaderComponent implements AfterContentInit {
   @Output() isMobileMenu = new EventEmitter<boolean>();
   public isMobileMenuVisible = false;
   public showDropdown = false;
-  private burgerMenu!: any;
 
   constructor(private router: Router) {}
-
-  ngAfterViewInit(): void {
-    this.burgerMenu = document.getElementById('nav-icon1');
-    console.log(this.burgerMenu);
-
-  }
 
   ngAfterContentInit(): void {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationStart) {
-        console.log('instanceof trigg');
 
         if(this.isMobileMenuVisible) {
-          console.log('is mobile');
-
           this.toggleMobileMenu();
+          this.showDropdown = false;
         }
       }
     });
