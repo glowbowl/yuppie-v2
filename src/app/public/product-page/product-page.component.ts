@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { AllProductCarouselComponent } from '../../shared/all-product-carousel/all-product-carousel.component';
+import { GalleryGridComponent } from '../../shared/gallery-grid/gallery-grid.component';
 
 @Component({
   selector: 'yup-product-page',
   standalone: true,
-  imports: [CommonModule, MainCarouselComponent, AllProductCarouselComponent],
+  imports: [CommonModule, MainCarouselComponent, AllProductCarouselComponent, GalleryGridComponent],
   templateUrl: './product-page.component.html',
   styleUrl: './product-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

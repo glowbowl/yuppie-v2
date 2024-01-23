@@ -17,7 +17,7 @@
     transform: translateX(0);
 
     &.side-open {
-      transform: translateX(50%);
+      transform: translateX(50vw);
       overflow: hidden;
     }
   }
