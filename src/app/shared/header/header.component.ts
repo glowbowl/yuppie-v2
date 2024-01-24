@@ -10,10 +10,13 @@ import {
   AfterContentInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   EventEmitter,
+  OnDestroy,
   Output,
 } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'yup-header',
@@ -40,23 +43,32 @@ import { NavigationStart, Router, RouterLink } from '@angular/router';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements AfterContentInit {
+export class HeaderComponent implements AfterContentInit, OnDestroy {
   @Output() isMobileMenu = new EventEmitter<boolean>();
   public isMobileMenuVisible = false;
   public showDropdown = false;
+  private ngUnsubscribe$ = new Subject();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private element: ElementRef) {}
 
   ngAfterContentInit(): void {
-    this.router.events.subscribe((val) => {
+    this.router.events
+    .pipe(takeUntil(this.ngUnsubscribe$))
+    .subscribe((val) => {
       if (val instanceof NavigationStart) {
 
+        this.element.nativeElement.scrollIntoView({behavior: 'smooth'});
         if(this.isMobileMenuVisible) {
           this.toggleMobileMenu();
           this.showDropdown = false;
         }
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.ngUnsubscribe$.next(null);
+    this.ngUnsubscribe$.complete();
   }
 
   public toggleMobileMenu(): void {
