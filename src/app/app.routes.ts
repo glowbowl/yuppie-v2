@@ -25,5 +25,11 @@ export const routes: Routes = [
       import('./public/product-page/product-page.component').then((m) => m.ProductPageComponent),
     pathMatch: 'full',
   },
+  {
+    path: 'about-us',
+    loadComponent: () =>
+      import('./public/about-us-page/about-us-page.component').then((m) => m.AboutUsPageComponent),
+    pathMatch: 'full',
+  },
   { path: '**', redirectTo: '' },
 ];
