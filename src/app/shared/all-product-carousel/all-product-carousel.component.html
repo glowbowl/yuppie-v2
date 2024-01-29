@@ -1,31 +1,29 @@
-<div class="relative overflow-hidden">
-  <div
-    class="flex transition-transform ease-in-out duration-300"
-    [style.transform]="'translateX(' + -currentIndex * (100 / 4) + '%)'"
-  >
-    <ng-container *ngFor="let item of items; let i = index">
-      <div class="w-1/4 flex-shrink-0 flex items-center justify-center">
-        <div
-          class="h-64 flex items-end justify-center w-full"
-          [ngStyle]="{
-            'background-image': 'url(' + item.image + ')'
-          }"
-          style="
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-          "
-        >
-          <div class="relative">
+<div class="flex flex-col items-center mb-8">
+  <h1 class="font-black text-4xl md:text-5xl mb-8">
+    NASZE SMAKI
+  </h1>
+</div>
+<div class="relative -mt-20 -mb-5 md:m-0">
+  <div class="slider">
+    <ul [style.transform]="'translateX(-100%/' + visibleSlides + ')'">
+      <li [ngStyle]="{'width' : 'calc(100%/' + visibleSlides + ')'}" *ngFor="let item of items">
+        <div class="w-full h-full flex-shrink-0 flex items-center justify-center flex-col gap-5">
+          <div
+            class="cursor-pointer transition-transform transform md:scale-100 md:hover:scale-110 h-1/2 md:h-3/4 flex items-end justify-center w-full carousel-item-container"
+            [ngStyle]="{
+              'background-image': 'url(' + item.image + ')'
+            }"
+          ></div>
+          <div class="font-semibold text-xl">
             {{ item.title }}
           </div>
         </div>
-      </div>
-    </ng-container>
+      </li>
+    </ul>
   </div>
   <button
     (click)="prev()"
-    class="absolute top-1/2 left-0 transform -translate-y-1/2 text-white p-2"
+    class="absolute top-1/2 left-0 text-white p-2"
     style="transform: rotate(180deg)"
   >
     <svg
@@ -59,7 +57,7 @@
   </button>
   <button
     (click)="next()"
-    class="absolute top-1/2 right-0 transform -translate-y-1/2 text-white p-2"
+    class="absolute top-1/2 right-0 text-white p-2"
   >
     <svg
       width="36"

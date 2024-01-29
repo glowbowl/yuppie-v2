@@ -31,5 +31,11 @@ export const routes: Routes = [
       import('./public/about-us-page/about-us-page.component').then((m) => m.AboutUsPageComponent),
     pathMatch: 'full',
   },
+  {
+    path: 'privacy-policy',
+    loadComponent: () =>
+      import('./public/policy-page/policy-page.component').then((m) => m.PolicyPageComponent),
+    pathMatch: 'full',
+  },
   { path: '**', redirectTo: '' },
 ];
