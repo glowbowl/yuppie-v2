@@ -18,19 +18,24 @@ import { TextSectionComponent } from '../../shared/text-section/text-section.com
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent {
-  // , {title: 'Three', color: 'gray', image: './assets/img/third.jpg'}
   public carouselItems = [
     {
       title: 'One',
       color: 'lightgray',
-      image: './assets/img/1000_v1.png',
-      mobileImage: './assets/img/mobile_v1.png',
+      image: './assets/top-home/web/1.PNG',
+      mobileImage: './assets/top-home/mobile/1.PNG',
     },
     {
       title: 'Two',
       color: 'lightgray',
-      image: './assets/img/1000_v2.png',
-      mobileImage: './assets/img/mobile_v2.png',
+      image: './assets/top-home/web/2.PNG',
+      mobileImage: './assets/top-home/mobile/2.PNG',
+    },
+    {
+      title: 'Two',
+      color: 'lightgray',
+      image: './assets/top-home/web/3.jpg',
+      mobileImage: './assets/top-home/mobile/3.JPG',
     },
   ];
   public carouselProductItems = [

@@ -14,10 +14,9 @@ export class AboutUsPageComponent {
   public carouselItems = [
     {
       title: 'O nas Yuppie',
-      titleVisible: true,
       color: 'lightgray',
-      image: './assets/img/first.jpg',
-      mobileImage: './assets/img/first.jpg',
+      image: './assets/top-about/web/1.PNG',
+      mobileImage: './assets/top-about/mobile/1.PNG',
     }
   ];
 }

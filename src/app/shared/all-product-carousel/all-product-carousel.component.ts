@@ -14,17 +14,20 @@ import {
   OnInit,
   Renderer2,
 } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'yup-all-product-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './all-product-carousel.component.html',
   styleUrl: './all-product-carousel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllProductCarouselComponent implements OnInit {
   @Input() items: any[] = [];
+  @Input() pageTitle: string = 'NASZE SMAKI';
+  @Input() secondaryStyle: boolean = false;
   public visibleSlides: number = 4;
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 

@@ -20,9 +20,15 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'product',
+    path: 'product/:category',
     loadComponent: () =>
       import('./public/product-page/product-page.component').then((m) => m.ProductPageComponent),
+    pathMatch: 'full',
+  },
+  {
+    path: 'item/:name',
+    loadComponent: () =>
+      import('./public/item-page/item-page.component').then((m) => m.ItemPageComponent),
     pathMatch: 'full',
   },
   {

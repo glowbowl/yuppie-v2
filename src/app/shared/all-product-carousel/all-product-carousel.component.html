@@ -1,6 +1,6 @@
-<div class="flex flex-col items-center mb-8">
-  <h1 class="font-black text-4xl md:text-5xl mb-8">
-    NASZE SMAKI
+<div class="flex flex-col items-center mb-8" [ngClass]="{'items-start': secondaryStyle}">
+  <h1 class="font-black text-4xl md:text-5xl mb-8" [ngClass]="{'text-1xl': secondaryStyle}">
+    {{pageTitle}}
   </h1>
 </div>
 <div class="relative -mt-20 -mb-5 md:m-0">
@@ -13,8 +13,9 @@
             [ngStyle]="{
               'background-image': 'url(' + item.image + ')'
             }"
+            [routerLink]="['/item', '700']"
           ></div>
-          <div class="font-semibold text-xl">
+          <div class="font-semibold text-xl text-center" style="max-width: 135px;height: 28px;">
             {{ item.title }}
           </div>
         </div>

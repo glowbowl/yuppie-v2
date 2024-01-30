@@ -15,10 +15,9 @@ export class CooperationPageComponent {
   public carouselItems = [
     {
       title: 'Współpraca Yuppie',
-      titleVisible: true,
       color: 'lightgray',
-      image: './assets/img/first.jpg',
-      mobileImage: './assets/img/first.jpg',
+      image: './assets/top-collaboration/web/1.PNG',
+      mobileImage: './assets/top-collaboration/mobile/1.PNG',
     }
   ];
 }

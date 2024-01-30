@@ -15,10 +15,9 @@ export class LocationPageComponent {
   public carouselItems = [
     {
       title: 'Lokalizacje Yuppie',
-      titleVisible: true,
       color: 'lightgray',
-      image: './assets/img/third.jpg',
-      mobileImage: './assets/img/third.jpg',
+      image: './assets/top-location/web/1.jpg',
+      mobileImage: './assets/top-location/mobile/1.PNG',
     }
   ];
 }
