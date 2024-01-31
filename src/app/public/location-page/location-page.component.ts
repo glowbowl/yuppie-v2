@@ -20,4 +20,10 @@ export class LocationPageComponent {
       mobileImage: './assets/top-location/mobile/1.PNG',
     }
   ];
+
+  public carouselNavigationItems = [
+    {
+      routeUrl: '/cooperation'
+    },
+  ]
 }

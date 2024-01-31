@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'yup-main-carousel',
@@ -13,13 +14,21 @@ export class MainCarouselComponent implements OnInit, AfterViewInit {
   @Input() items: any[] = [];
   @Input() showTitle = false;
   @Input() showButton = true;
+  @Input() buttonText = 'Zobacz Więcej';
+  @Input() navigateRoute: any = [
+    {
+      routeUrl: '/product',
+      routeParameter: '1000v1'
+    }
+  ]
   @ViewChild('progress') progress!: ElementRef<any>;
   public currentIndex = 0;
   public showProgressBar = true;
   public imageDesktop = true;
 
   constructor(
-      private cdr: ChangeDetectorRef
+      private cdr: ChangeDetectorRef,
+      private router: Router,
     ) {}
 
   ngOnInit(): void {
@@ -37,6 +46,14 @@ export class MainCarouselComponent implements OnInit, AfterViewInit {
     } else {
       this.showProgressBar = false;
       this.cdr.detectChanges();
+    }
+  }
+
+  public navigateTo() {
+    if (this.navigateRoute[this.currentIndex]?.routeParameter) {
+      this.router.navigate([this.navigateRoute[this.currentIndex]?.routeUrl, this.navigateRoute[this.currentIndex]?.routeParameter]);
+    } else {
+      this.router.navigate([this.navigateRoute[0]?.routeUrl]);
     }
   }
 
