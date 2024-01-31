@@ -57,9 +57,9 @@ export class MainPageComponent {
       title: 'Yuppie 700',
       category: '700',
       titleLogo: './assets/img/yup700_logo.png',
-      image: './assets/img/1000-v1/ybiv1-1.png',
-      sideImageOne: './assets/img/1000-v1/yccv1-2.png',
-      sideImageTwo: './assets/img/1000-v1/ycv1-4.png',
+      image: './assets/categoryImg/700/700b.PNG',
+      sideImageOne: './assets/categoryImg/700/700ci.PNG',
+      sideImageTwo: './assets/categoryImg/700/700mi.PNG',
     },
     {
       title: 'Yuppie 1000 V1',
@@ -75,7 +75,7 @@ export class MainPageComponent {
       titleLogo: './assets/img/yup1000v2_logo.png',
       image: './assets/categoryImg/1000v2/v2bi.png',
       sideImageOne: './assets/categoryImg/1000v2/v2br.png',
-      sideImageTwo: './assets/categoryImg/1000v2/v2c.png',
+      sideImageTwo: './assets/categoryImg/1000v2/v2cc.png',
     },
   ];
 }

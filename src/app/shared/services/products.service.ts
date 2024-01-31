@@ -10,23 +10,63 @@ export class ProductsService {
         return [
           {
             title: 'Blackcurrant',
-            image: './assets/categoryImg/700/700b.png',
+            image: './assets/categoryImg/700/700b.PNG',
           },
           {
             title: 'Blueberry Ice',
-            image: './assets/categoryImg/700/700bi.png',
+            image: './assets/categoryImg/700/700bi.PNG',
           },
           {
             title: 'Cotton Candy',
-            image: './assets/categoryImg/700/700cc.png',
+            image: './assets/categoryImg/700/700cc.PNG',
           },
           {
             title: 'Cola Ice',
-            image: './assets/categoryImg/700/700ci.png',
+            image: './assets/categoryImg/700/700ci.PNG',
           },
           {
             title: 'Double Apple',
-            image: './assets/categoryImg/700/700da.png',
+            image: './assets/categoryImg/700/700da.PNG',
+          },
+          {
+            title: 'Energy Drink',
+            image: './assets/categoryImg/700/700ed.PNG',
+          },
+          {
+            title: 'Lychee Ice',
+            image: './assets/categoryImg/700/700li.PNG',
+          },
+          {
+            title: 'Mint',
+            image: './assets/categoryImg/700/700m.PNG',
+          },
+          {
+            title: 'Mango Ice',
+            image: './assets/categoryImg/700/700mi.PNG',
+          },
+          {
+            title: 'Mixed Orange',
+            image: './assets/categoryImg/700/700mo.PNG',
+          },
+          {
+            title: 'Peach Mango',
+            image: './assets/categoryImg/700/700pm.PNG',
+          },
+          {
+            title: 'Strawberry Ice',
+            image: './assets/categoryImg/700/700si.PNG',
+          },
+          {
+            title: 'Strawberry Ice Cream',
+            image: './assets/categoryImg/700/700sic.PNG',
+          },
+          {
+            title: 'Strawberry Kiwi',
+            image: './assets/categoryImg/700/700sk.PNG',
+          },
+          {
+            title: 'Watermelon Ice',
+            image: './assets/categoryImg/700/700wi.PNG',
           },
         ];
       case '1000v1':
@@ -142,7 +182,14 @@ export class ProductsService {
           './assets/categoryImg/1000v1-gallery/6.JPG',
         ];
       case '1000v2':
-        return ['Book 1', 'Book 2', 'Book 3', 'Product X', 'Product Y', 'Product Z'];
+        return [
+          './assets/categoryImg/1000v2-gallery/1.PNG',
+          './assets/categoryImg/1000v2-gallery/2.PNG',
+          './assets/categoryImg/1000v2-gallery/3.PNG',
+          './assets/categoryImg/1000v2-gallery/4.PNG',
+          './assets/categoryImg/1000v2-gallery/5.PNG',
+          './assets/categoryImg/1000v2-gallery/6.PNG',
+        ];
       default:
         return [];
     }

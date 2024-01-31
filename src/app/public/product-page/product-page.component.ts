@@ -18,7 +18,7 @@ export class ProductPageComponent implements OnInit {
   public carouselProductItems: any = [];
   public productGalery: string[] = [];
   public carouselItems: any = [];
-  private category: string = '';
+  public category: string = '';
 
   constructor(
     private productService: ProductsService,

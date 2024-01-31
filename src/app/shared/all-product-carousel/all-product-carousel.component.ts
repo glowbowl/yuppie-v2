@@ -1,17 +1,10 @@
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
   Input,
-  OnInit,
+  OnChanges,
   Renderer2,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -24,27 +17,43 @@ import { RouterLink } from '@angular/router';
   styleUrl: './all-product-carousel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AllProductCarouselComponent implements OnInit {
+export class AllProductCarouselComponent implements OnChanges {
   @Input() items: any[] = [];
   @Input() pageTitle: string = 'NASZE SMAKI';
   @Input() secondaryStyle: boolean = false;
+  @Input() category: string = '700';
   public visibleSlides: number = 4;
   constructor(private renderer: Renderer2, private el: ElementRef) {}
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.setVisibleSlides();
+    setTimeout(() => {
+      this.initialStyleSet();
+    }, 100 )
+  }
+
+  setVisibleSlides() {
     const device = navigator.userAgent;
     if (
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(
         device
       )
     ) {
-      this.visibleSlides = 2;
+      if (this.category === '1000v2') {
+        this.visibleSlides = 1;
+      } else {
+        this.visibleSlides = 2;
+      }
     } else {
       this.visibleSlides = 4;
     }
   }
 
   ngAfterViewInit() {
+    this.initialStyleSet();
+  }
+
+  initialStyleSet() {
     const sliderItems = this.el.nativeElement.querySelectorAll('.slider ul li');
     sliderItems.forEach((item: any, index: any) => {
       this.renderer.setStyle(item, 'order', index + 1);

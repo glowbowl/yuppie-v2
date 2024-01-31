@@ -16,7 +16,7 @@ export class LocationPageComponent {
     {
       title: 'Lokalizacje Yuppie',
       color: 'lightgray',
-      image: './assets/top-location/web/1.jpg',
+      image: './assets/top-location/web/1.PNG',
       mobileImage: './assets/top-location/mobile/1.PNG',
     }
   ];
