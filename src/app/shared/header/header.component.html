@@ -20,7 +20,7 @@
     </div>
     <nav class="hidden md:flex space-x-10 font-semibold text-lg uppercase">
       <a class="cursor-pointer hover:text-gray-400" routerLink="/">Home</a>
-      <div class="relative" (click)="showDropdown = !showDropdown">
+      <div class="relative" (click)="toogleMenu()">
         <a class="cursor-pointer hover:text-gray-400">Produkty</a>
 
         <div *ngIf="showDropdown" class="absolute -left-3 mt-4 bg-black shadow-md z-20 text-base">
@@ -42,7 +42,7 @@
 <div class="sidebar bg-black text-white font-semibold" [class.open]="isMobileMenuVisible">
   <nav class="flex flex-col space-y-6 px-4 py-10 uppercase items-center">
     <a routerLink="/">Home</a>
-    <a (click)="showDropdown = !showDropdown" class="flex relative items-center">
+    <a (click)="toogleMenu()" class="flex relative items-center">
       Produkty
         <svg
         class="absolute"

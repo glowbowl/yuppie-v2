@@ -1,10 +1,10 @@
-<div class="carousel-container">
+<div class="carousel-container h-[80vh] md:h-[820px] md:min-h-[820px]">
   <div class="carousel h-full" [style.transform]="'translateX(' + -currentIndex * 100 + '%)'">
     <div *ngFor="let item of items" class="carousel-item">
       <div [ngStyle]="{
           'background-color': item.color,
           'background-image': 'url(' + (imageDesktop ? item.image : item.mobileImage) + ')'
-        }" class="flex h-full items-center justify-center text-2xl carousel-item-container flex-col">
+        }" class="flex h-full items-center justify-center text-2xl carousel-item-container flex-col bg-center">
         @if (showTitle) {
           <div class="font-bold text-5xl w-10/12 text-center md:text-5xl md:w-full" style="color: #3e3e3e;">
             {{ item.title }}

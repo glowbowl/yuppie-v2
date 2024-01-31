@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import {
   AfterContentInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
@@ -49,13 +50,14 @@ export class HeaderComponent implements AfterContentInit, OnDestroy {
   public showDropdown = false;
   private ngUnsubscribe$ = new Subject();
 
-  constructor(private router: Router, private element: ElementRef) {}
+  constructor(private router: Router, private element: ElementRef, private cdr: ChangeDetectorRef) {}
 
   ngAfterContentInit(): void {
     this.router.events
     .pipe(takeUntil(this.ngUnsubscribe$))
     .subscribe((val) => {
       if (val instanceof NavigationStart) {
+        this.showDropdown = false;
 
         this.element.nativeElement.scrollIntoView({behavior: 'smooth'});
         if(this.isMobileMenuVisible) {
@@ -74,5 +76,9 @@ export class HeaderComponent implements AfterContentInit, OnDestroy {
   public toggleMobileMenu(): void {
     this.isMobileMenuVisible = !this.isMobileMenuVisible;
     this.isMobileMenu.emit(this.isMobileMenuVisible);
+  }
+
+  public toogleMenu(): void {
+    this.showDropdown = !this.showDropdown;
   }
 }
