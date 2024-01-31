@@ -20,15 +20,27 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'product',
+    path: 'product/:category',
     loadComponent: () =>
       import('./public/product-page/product-page.component').then((m) => m.ProductPageComponent),
+    pathMatch: 'full',
+  },
+  {
+    path: 'item/:name',
+    loadComponent: () =>
+      import('./public/item-page/item-page.component').then((m) => m.ItemPageComponent),
     pathMatch: 'full',
   },
   {
     path: 'about-us',
     loadComponent: () =>
       import('./public/about-us-page/about-us-page.component').then((m) => m.AboutUsPageComponent),
+    pathMatch: 'full',
+  },
+  {
+    path: 'privacy-policy',
+    loadComponent: () =>
+      import('./public/policy-page/policy-page.component').then((m) => m.PolicyPageComponent),
     pathMatch: 'full',
   },
   { path: '**', redirectTo: '' },

@@ -10,6 +10,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GalleryGridComponent {
-  @Input() galleryArray = [];
+  @Input() items: string[] = [];
   public galleryItems = new Array(6);
 }

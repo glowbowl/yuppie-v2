@@ -25,9 +25,9 @@
 
         <div *ngIf="showDropdown" class="absolute -left-3 mt-4 bg-black shadow-md z-20 text-base">
           <ul class="py-2 z-20" style="width: 175px;">
-            <li class="cursor-pointer px-4 py-2" routerLink="/product">Yuppie 700</li>
-            <li class="cursor-pointer px-4 py-2" routerLink="/product">Yuppie 1000 (v1)</li>
-            <li class="cursor-pointer px-4 py-2" routerLink="/product">Yuppie 1000 (v2)</li>
+            <li class="cursor-pointer px-4 py-2" [routerLink]="['/product', '700']">Yuppie 700</li>
+            <li class="cursor-pointer px-4 py-2" [routerLink]="['/product', '1000v1']">Yuppie 1000 (v1)</li>
+            <li class="cursor-pointer px-4 py-2" [routerLink]="['/product', '1000v2']">Yuppie 1000 (v2)</li>
           </ul>
         </div>
       </div>
@@ -87,9 +87,9 @@
     [style.overflow]="showDropdown ? 'visible' : 'hidden'"
     >
       <ul style="width: 175px;">
-        <li class="cursor-pointer px-4 py-2 flex justify-center" routerLink="/product">Yuppie 700</li>
-        <li class="cursor-pointer px-4 py-2 flex justify-center" routerLink="/product">Yuppie 1000 (v1)</li>
-        <li class="cursor-pointer px-4 py-2 flex justify-center" routerLink="/product">Yuppie 1000 (v2)</li>
+        <li class="cursor-pointer px-4 py-2 flex justify-center" [routerLink]="['/product', '700']">Yuppie 700</li>
+        <li class="cursor-pointer px-4 py-2 flex justify-center" [routerLink]="['/product', '1000v1']">Yuppie 1000 (v1)</li>
+        <li class="cursor-pointer px-4 py-2 flex justify-center" [routerLink]="['/product', '1000v2']">Yuppie 1000 (v2)</li>
       </ul>
     </div>
 

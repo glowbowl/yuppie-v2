@@ -3,7 +3,12 @@
   <div class="mt-20 mb-10 md:my-20">
     <yup-all-product-carousel [items]="carouselProductItems"></yup-all-product-carousel>
   </div>
-  <div class="my-10 container mx-auto">
-    <yup-gallery-grid></yup-gallery-grid>
+  <div class="mt-10 mb-20 container mx-auto">
+    <div class="flex flex-col items-center mb-8">
+      <h1 class="font-black text-4xl md:text-5xl mb-8">
+        NAJLEPSZE ROZWIĄZANIE DLA CIEBIE
+      </h1>
+    </div>
+    <yup-gallery-grid [items]="productGalery"></yup-gallery-grid>
   </div>
 </div>

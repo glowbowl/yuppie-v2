@@ -11,13 +11,27 @@ import { GalleryGridComponent } from '../../shared/gallery-grid/gallery-grid.com
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutUsPageComponent {
+  public arr = [
+    './assets/categoryImg/1000v1-gallery/1.JPG',
+    './assets/categoryImg/700-gallery/2.PNG',
+    './assets/categoryImg/1000v1-gallery/3.JPG',
+    './assets/categoryImg/700-gallery/4.PNG',
+    './assets/categoryImg/700-gallery/5.PNG',
+    './assets/categoryImg/1000v1-gallery/6.JPG',
+  ];
+  public some:any;
   public carouselItems = [
     {
       title: 'O nas Yuppie',
-      titleVisible: true,
       color: 'lightgray',
-      image: './assets/img/first.jpg',
-      mobileImage: './assets/img/first.jpg',
+      image: './assets/top-about/web/1.PNG',
+      mobileImage: './assets/top-about/mobile/1.PNG',
     }
   ];
+
+  public carouselNavigationItems = [
+    {
+      routeUrl: '/cooperation'
+    },
+  ]
 }

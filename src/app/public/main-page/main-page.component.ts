@@ -18,24 +18,52 @@ import { TextSectionComponent } from '../../shared/text-section/text-section.com
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent {
-  // , {title: 'Three', color: 'gray', image: './assets/img/third.jpg'}
   public carouselItems = [
     {
       title: 'One',
       color: 'lightgray',
-      image: './assets/img/1000_v1.png',
-      mobileImage: './assets/img/mobile_v1.png',
+      image: './assets/top-home/web/1.PNG',
+      mobileImage: './assets/top-home/mobile/1.PNG',
     },
     {
       title: 'Two',
       color: 'lightgray',
-      image: './assets/img/1000_v2.png',
-      mobileImage: './assets/img/mobile_v2.png',
+      image: './assets/top-home/web/2.PNG',
+      mobileImage: './assets/top-home/mobile/2.PNG',
+    },
+    {
+      title: 'Two',
+      color: 'lightgray',
+      image: './assets/top-home/web/3.jpg',
+      mobileImage: './assets/top-home/mobile/3.JPG',
     },
   ];
+  public carouselNavigationItems = [
+    {
+      routeUrl: '/product',
+      routeParameter: '700'
+    },
+    {
+      routeUrl: '/product',
+      routeParameter: '1000v2'
+    },
+    {
+      routeUrl: '/product',
+      routeParameter: '1000v1'
+    }
+  ]
   public carouselProductItems = [
     {
+      title: 'Yuppie 700',
+      category: '700',
+      titleLogo: './assets/img/yup700_logo.png',
+      image: './assets/img/1000-v1/ybiv1-1.png',
+      sideImageOne: './assets/img/1000-v1/yccv1-2.png',
+      sideImageTwo: './assets/img/1000-v1/ycv1-4.png',
+    },
+    {
       title: 'Yuppie 1000 V1',
+      category: '1000v1',
       titleLogo: './assets/img/yup1000v1_logo.png',
       image: './assets/img/1000-v1/ybiv1-1.png',
       sideImageOne: './assets/img/1000-v1/yccv1-2.png',
@@ -43,10 +71,11 @@ export class MainPageComponent {
     },
     {
       title: 'Yuppie 1000 V2',
+      category: '1000v2',
       titleLogo: './assets/img/yup1000v2_logo.png',
-      image: './assets/img/1000-v2/ybiv2-1.png',
-      sideImageOne: './assets/img/1000-v2/ybrv2-2.png',
-      sideImageTwo: './assets/img/1000-v2/yccv2-3.png',
+      image: './assets/categoryImg/1000v2/v2bi.png',
+      sideImageOne: './assets/categoryImg/1000v2/v2br.png',
+      sideImageTwo: './assets/categoryImg/1000v2/v2c.png',
     },
   ];
 }
