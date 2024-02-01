@@ -1,39 +1,49 @@
 <div class="max-w-screen-xl my-0 mx-auto w-11/12">
-  <div class="mt-20 mb-10 md:my-20">
+  <div class="my-16 md:my-20">
     <!-- SEPARATE TO COMPONENT -->
-    <div class="flex">
-      <div class="w-2/5 flex items-center justify-center">
+    <div class="flex flex-col md:flex-row">
+      <div
+        class="flex md:hidden justify-center font-extrabold text-4xl mb-4 text-center"
+      >
+        {{ currentItem.title }}
+      </div>
+      <div class="hidden md:flex w-2/5 items-center justify-center">
         <img
-          src="./assets/categoryImg/1000v2/v2bi.png"
+          [src]="currentItem?.image"
           alt="Logo"
           style="height: 550px"
           class=""
         />
       </div>
-      <div class="w-3/5 flex justify-center items-center">
-        <div class="flex justify-center flex-col w-9/12">
-          <div class="font-extrabold text-5xl mb-4">
-            Blueberry Ice
+      <div class="w-full md:w-3/5 flex justify-center items-center">
+        <div
+          class="flex justify-center flex-col w-full md:w-9/12 mt-5 md:mt-0 items-center md:items-start"
+        >
+          <div class="hidden md:block font-extrabold text-5xl mb-4">
+            {{ currentItem.title }}
           </div>
-          <div class="font-semibold" style="color: #888">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac feugiat
-            urna. Proin interdum semper dolor id sodales. Vestibulum vitae libero
-            accumsan, viverra nunc in, tincidunt elit. Morbi faucibus libero vitae
-            mi ultrices blandit. Curabitur ac condimentum odio, sed mattis eros.
-            Cras lacinia metus a mi aliquet, a pharetra tortor mattis.
+          <div class="flex md:hidden w-full items-center justify-center">
+            <img
+              [src]="currentItem?.image"
+              alt="Logo"
+              style="height: 450px"
+              class=""
+            />
+          </div>
+          <div class="font-semibold w-11/12 md:w-full mt-10 md:mt-0" style="color: #888">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+            feugiat urna. Proin interdum semper dolor id sodales. Vestibulum
+            vitae libero accumsan, viverra nunc in, tincidunt elit. Morbi
+            faucibus libero vitae mi ultrices blandit. Curabitur ac condimentum
+            odio, sed mattis eros. Cras lacinia metus a mi aliquet, a pharetra
+            tortor mattis.
             <div class="flex flex-col mt-5">
-              <span>
-                BATERIA: <span class="font-bold">500 mAh</span>
-              </span>
-              <span>
-                LICZBA DYMÓW: <span class="font-bold">600</span>
-              </span>
+              <span> BATERIA: <span class="font-bold">500 mAh</span> </span>
+              <span> LICZBA DYMÓW: <span class="font-bold">600</span> </span>
               <span>
                 SÓL NIKOTYNOWA: <span class="font-bold">20 mg</span>
               </span>
-              <span>
-                PŁYN: <span class="font-bold">2,0 ml</span>
-              </span>
+              <span> PŁYN: <span class="font-bold">2,0 ml</span> </span>
             </div>
           </div>
         </div>
@@ -41,7 +51,12 @@
     </div>
     <!-- SEPARATE TO COMPONENT END -->
   </div>
-  <div class="mt-20 mb-10 md:my-20">
-    <yup-all-product-carousel [pageTitle]="'Produkty powiązane'" [secondaryStyle]="true" [items]="carouselProductItems"></yup-all-product-carousel>
+  <div class="my-10 md:my-20">
+    <yup-all-product-carousel
+      [pageTitle]="'Produkty powiązane'"
+      [secondaryStyle]="true"
+      [items]="carouselProductItems"
+      [category]="category"
+    ></yup-all-product-carousel>
   </div>
 </div>

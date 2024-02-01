@@ -26,7 +26,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'item/:name',
+    path: 'item/:category/:name',
     loadComponent: () =>
       import('./public/item-page/item-page.component').then((m) => m.ItemPageComponent),
     pathMatch: 'full',

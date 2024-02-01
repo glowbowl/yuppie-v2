@@ -1,21 +1,39 @@
-<div class="flex flex-col items-center mb-8" [ngClass]="{'items-start': secondaryStyle}">
-  <h1 class="font-black text-4xl md:text-5xl mb-8" [ngClass]="{'text-1xl': secondaryStyle}">
-    {{pageTitle}}
+<div
+  class="flex flex-col mb-8"
+  [ngClass]="{ 'items-start': secondaryStyle, 'items-center': !secondaryStyle }"
+  [ngStyle]="{ borderBottom: secondaryStyle ? '2px solid lightgray' : 'none' }"
+>
+  <h1
+    class="font-black text-4xl md:text-5xl mb-8"
+    [ngClass]="{
+      'text-2xl md:text-3xl': secondaryStyle,
+      'text-4xl md:text-5xl': !secondaryStyle
+    }"
+  >
+    {{ pageTitle }}
   </h1>
 </div>
 <div class="relative -mt-20 -mb-5 md:m-0">
   <div class="slider">
     <ul [style.transform]="'translateX(-100%/' + visibleSlides + ')'">
-      <li [ngStyle]="{'width' : 'calc(100%/' + visibleSlides + ')'}" *ngFor="let item of items">
-        <div class="w-full h-full flex-shrink-0 flex items-center justify-center flex-col gap-5">
+      <li
+        [ngStyle]="{ width: 'calc(100%/' + visibleSlides + ')' }"
+        *ngFor="let item of items"
+      >
+        <div
+          class="w-full h-full flex-shrink-0 flex items-center justify-center flex-col gap-5"
+        >
           <div
             class="cursor-pointer transition-transform transform md:scale-100 md:hover:scale-110 h-1/2 md:h-3/4 flex items-end justify-center w-full carousel-item-container"
             [ngStyle]="{
               'background-image': 'url(' + item.image + ')'
             }"
-            [routerLink]="['/item', '700']"
+            [routerLink]="['/item', category, item.itemName]"
           ></div>
-          <div class="font-semibold text-xl text-center" style="max-width: 135px;height: 28px;">
+          <div
+            class="font-semibold text-xl text-center"
+            style="max-width: 135px; height: 28px"
+          >
             {{ item.title }}
           </div>
         </div>
@@ -56,10 +74,7 @@
       </g>
     </svg>
   </button>
-  <button
-    (click)="next()"
-    class="absolute top-1/2 right-0 text-white p-2"
-  >
+  <button (click)="next()" class="absolute top-1/2 right-0 text-white p-2">
     <svg
       width="36"
       height="34"

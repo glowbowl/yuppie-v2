@@ -16,7 +16,7 @@ import {
   OnDestroy,
   Output,
 } from '@angular/core';
-import { NavigationStart, Router, RouterLink } from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -56,7 +56,7 @@ export class HeaderComponent implements AfterContentInit, OnDestroy {
     this.router.events
     .pipe(takeUntil(this.ngUnsubscribe$))
     .subscribe((val) => {
-      if (val instanceof NavigationStart) {
+      if (val instanceof NavigationEnd) {
         this.showDropdown = false;
 
         this.element.nativeElement.scrollIntoView({behavior: 'smooth'});
