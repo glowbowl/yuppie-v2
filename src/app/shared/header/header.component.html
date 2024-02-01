@@ -20,10 +20,9 @@
     </div>
     <nav class="hidden md:flex space-x-10 font-semibold text-lg uppercase">
       <a class="cursor-pointer hover:text-gray-400" routerLink="/">Home</a>
-      <div class="relative" (click)="toogleMenu()">
-        <a class="cursor-pointer hover:text-gray-400">Produkty</a>
-
-        <div *ngIf="showDropdown" class="absolute -left-3 mt-4 bg-black shadow-md z-20 text-base">
+      <div class="relative">
+        <a class="cursor-pointer hover:text-gray-400" (click)="toogleMenu()">Produkty</a>
+        <div [ngStyle]="{display: showDropdown ? 'block' : 'none'}" class="absolute -left-3 mt-4 bg-black shadow-md z-20 text-base">
           <ul class="py-2 z-20" style="width: 175px;">
             <li class="cursor-pointer px-4 py-2" [routerLink]="['/product', '700']">Yuppie 700</li>
             <li class="cursor-pointer px-4 py-2" [routerLink]="['/product', '1000v1']">Yuppie 1000 (v1)</li>

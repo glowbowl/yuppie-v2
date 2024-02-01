@@ -1,5 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { AllProductCarouselComponent } from '../../shared/all-product-carousel/all-product-carousel.component';
+import { Subject, takeUntil } from 'rxjs';
+import { ProductsService } from '../../shared/services/products.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'yup-item-page',
@@ -9,48 +12,33 @@ import { AllProductCarouselComponent } from '../../shared/all-product-carousel/a
   styleUrl: './item-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemPageComponent {
-  public carouselProductItems = [
-    {
-      title: 'Blueberry Ice',
-      itemName: 'blueberry-ice',
-      image: './assets/categoryImg/1000v2/v2bi.png',
-    },
-    {
-      title: 'Blue Razz',
-      image: './assets/categoryImg/1000v2/v2br.png',
-    },
-    {
-      title: 'Cappuccino',
-      image: './assets/categoryImg/1000v2/v2c.png',
-    },
-    {
-      title: 'Cotton Candy',
-      image: './assets/categoryImg/1000v2/v2cc.png',
-    },
-    {
-      title: 'Double Apple',
-      image: './assets/categoryImg/1000v2/v2da.png',
-    },
-    {
-      title: 'Grape Ice',
-      image: './assets/categoryImg/1000v2/v2gi.png',
-    },
-    {
-      title: 'Mint',
-      image: './assets/categoryImg/1000v2/v2m.png',
-    },
-    {
-      title: 'Mixed Berries',
-      image: './assets/categoryImg/1000v2/v2mb.png',
-    },
-    {
-      title: 'Strawberry Ice Cream',
-      image: './assets/categoryImg/1000v2/v2sic.png',
-    },
-    {
-      title: 'Watermelon Ice',
-      image: './assets/categoryImg/1000v2/v2wi.png',
-    },
-  ]
+export class ItemPageComponent implements OnDestroy {
+  public currentItem: any;
+  public carouselProductItems: any = [];
+  public category: string = '';
+  public itemName: string = '';
+
+  private ngUnsubscribe$ = new Subject();
+
+  constructor(
+    private productService: ProductsService,
+    private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef,
+  ) {
+    this.route.paramMap
+    .pipe(takeUntil(this.ngUnsubscribe$))
+    .subscribe(params => {
+      this.category = params.get('category') || 'all';
+      this.itemName = params.get('name') || 'all';
+      this.carouselProductItems = this.productService.getProductsByCategory(this.category);
+      this.currentItem = this.carouselProductItems.find((item: any) => item.itemName === this.itemName);
+      this.carouselProductItems = this.carouselProductItems.filter((item: any) => item.itemName !== this.itemName);
+      this.cdr.markForCheck();
+    });
+  }
+
+  ngOnDestroy() {
+    this.ngUnsubscribe$.next(null);
+    this.ngUnsubscribe$.complete();
+  }
 }

@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { AllProductCarouselComponent } from '../../shared/all-product-carousel/all-product-carousel.component';
 import { GalleryGridComponent } from '../../shared/gallery-grid/gallery-grid.component';
 import { ProductsService } from '../../shared/services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'yup-product-page',
@@ -14,18 +15,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './product-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductPageComponent implements OnInit {
+export class ProductPageComponent implements OnDestroy {
   public carouselProductItems: any = [];
   public productGalery: string[] = [];
   public carouselItems: any = [];
   public category: string = '';
+  private ngUnsubscribe$ = new Subject();
 
   constructor(
     private productService: ProductsService,
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
   ) {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap
+    .pipe(takeUntil(this.ngUnsubscribe$))
+    .subscribe(params => {
       this.category = params.get('category') || 'all';
       this.carouselProductItems = this.productService.getProductsByCategory(this.category);
       this.productGalery = this.productService.getProductsImagesByCategory(this.category);
@@ -34,7 +38,8 @@ export class ProductPageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  ngOnDestroy() {
+    this.ngUnsubscribe$.next(null);
+    this.ngUnsubscribe$.complete();
   }
-
 }
