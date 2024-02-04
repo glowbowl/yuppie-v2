@@ -1,11 +1,15 @@
-<div class="flex w-full flex-col items-center gap-4 md:gap-7" style="color: #3e3e3e;">
+<div
+  class="flex w-full flex-col items-center gap-4 md:gap-7"
+  style="color: #3e3e3e"
+>
   <div class="w-full md:w-1/2 flex gap-12 md:gap-24 flex-col leading-snug">
     <div class="flex flex-col w-full text-center">
       <div class="uppercase text-3xl md:text-4xl font-bold">
         DOWIEDZ SIĘ WIĘCEJ O NASZYCH PRODUKTACH
       </div>
-      <div class="font-bold" style="color: #6a6a6a;">
-        Jeśli jesteś zainteresowany zakupem hurtowym skontaktuj się z naszym biurem.
+      <div class="font-bold" style="color: #6a6a6a">
+        Jeśli jesteś zainteresowany zakupem hurtowym skontaktuj się z naszym
+        biurem.
       </div>
     </div>
     <!-- <div class="text-3xl md:text-4xl font-bold w-full md:w-4/5">
@@ -13,48 +17,114 @@
     </div> -->
   </div>
   <div class="w-full md:w-1/2 flex justify-center mt-10 md:mt-0">
-    <div class="rounded-3xl bg-white flex flex-col items-center h-full w-full md:w-4/5 py-12 px-10">
-      <div class="text-3xl font-bold w-2/3 text-center mb-6">Zapraszamy do współpracy</div>
-      <div class="flex w-full flex-col mb-11">
+    <form
+      class="rounded-3xl bg-white flex flex-col items-center h-full w-full md:w-4/5 py-12 px-10"
+    >
+      <div class="text-3xl font-bold w-2/3 text-center mb-6">
+        Zapraszamy do współpracy
+      </div>
+      <div class="flex w-full flex-col mb-11 gap-1">
         <div class="formControls">
-          <label class="submitLabel" for="name">Imię i nazwisko <span class="text-red-600">*</span></label>
+          <label class="submitLabel" for="name"
+            >Imię i nazwisko <span class="text-red-600">*</span></label
+          >
           <div class="submitInputContainer">
-              <input class="submitInput" type="text" id="name" name="name" placeholder="Wpisz swoje imię" onchange="validateName()" required>
-              <div class="error-input-message" id="error-name"></div>
+            <input
+              class="submitInput"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Wpisz swoje imię"
+              [formControl]="$any(contactForm).get('name')"
+              required
+            />
+            <div
+              class="error-input-message"
+              *ngIf="formControls.name.invalid && formControls.name.touched"
+            >
+              Imię i nazwisko są wymagane.
+            </div>
           </div>
         </div>
 
         <div class="formControls">
-            <label class="submitLabel" for="number">E-mail <span class="text-red-600">*</span></label>
-            <div class="submitInputContainer">
-                <input class="submitInput" type="e-mail" id="emailOrder" name="e-mail" placeholder="Twoja poczta" oninput="validateEmail('emailOrder')" required>
-                <div class="error-input-message" id="emailOrderError"></div>
+          <label class="submitLabel" for="number"
+            >E-mail <span class="text-red-600">*</span></label
+          >
+          <div class="submitInputContainer">
+            <input
+              class="submitInput"
+              type="e-mail"
+              id="emailOrder"
+              name="e-mail"
+              placeholder="Twoja poczta"
+              [formControl]="$any(contactForm).get('email')"
+              required
+            />
+            <div
+              class="error-input-message"
+              *ngIf="formControls.email.invalid && formControls.email.touched"
+            >
+              Proszę podać poprawny adres e-mail.
             </div>
+          </div>
         </div>
 
         <div class="formControls">
-            <label class="submitLabel" for="number">Telefon <span class="text-red-600">*</span></label>
-            <div class="submitInputContainer">
-                <input class="submitInput" type="text" id="number" name="number" placeholder="Wprowadź numer" oninput="validateNumber(this)" required>
-                <div class="error-input-message" id="error-number"></div>
+          <label class="submitLabel" for="number"
+            >Telefon <span class="text-red-600">*</span></label
+          >
+          <div class="submitInputContainer">
+            <input
+              class="submitInput"
+              type="text"
+              id="number"
+              name="number"
+              placeholder="Wprowadź numer"
+              [formControl]="$any(contactForm).get('number')"
+              required
+            />
+            <div
+              class="error-input-message"
+              *ngIf="formControls.number.invalid && formControls.number.touched"
+            >
+              Proszę wpisać poprawny numer telefonu.
             </div>
+          </div>
         </div>
 
         <div class="formControls">
           <label class="submitLabel" for="number">Wiadomość</label>
           <div class="submitInputContainer">
-              <input class="submitInput" type="text" id="name" name="name" placeholder="Wpisz swoje imię" onchange="validateName()" required>
-              <div class="error-input-message" id="error-number"></div>
+            <input
+              class="submitInput"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Wpisz swoje imię"
+              [formControl]="$any(contactForm).get('message')"
+            />
           </div>
         </div>
-
       </div>
 
-      <div class="w-full" style="border-top: 1px solid lightgrey;"></div>
+      <div class="w-full" style="border-top: 1px solid lightgrey"></div>
 
-      <div class="text-sm leading-tight mb-6" style="color: #444444;">Administratorem danych osobowych jest NiX Group Sp. z.o.o. z siedzibą w Przemyślie. Dane osobowe będą przetwarzane w celu identyfikacji nadawcy oraz obsługi zapytania przesłanego przez udostępniony formularz. Więcej informacji o przetwarzaniu danych osobowych, w tym o przysługujących Państwu uprawnieniach, znajduje się w Polityce prywatności</div>
+      <div class="text-sm leading-tight mb-6" style="color: #444444">
+        Administratorem danych osobowych jest NiX Group Sp. z.o.o. z siedzibą w
+        Przemyślie. Dane osobowe będą przetwarzane w celu identyfikacji nadawcy
+        oraz obsługi zapytania przesłanego przez udostępniony formularz. Więcej
+        informacji o przetwarzaniu danych osobowych, w tym o przysługujących
+        Państwu uprawnieniach, znajduje się w Polityce prywatności
+      </div>
 
-      <button class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded-3xl hover:text-gray-200 uppercase bg-black">Wyślij zapytanie</button>
-    </div>
+      <button
+        type="button"
+        (click)="sendEmail()"
+        class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded-3xl hover:text-gray-200 uppercase bg-black"
+      >
+        <span *ngIf="!loader">Wyślij zapytanie</span><div *ngIf="loader" class="loader"></div>
+      </button>
+    </form>
   </div>
 </div>
