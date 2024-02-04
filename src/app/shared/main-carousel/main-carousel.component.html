@@ -1,4 +1,4 @@
-<div class="carousel-container h-[80vh] md:h-[820px] md:min-h-[820px]">
+<div class="carousel-container h-[80vh] md:h-[680px] md:min-h-[680px]">
   <div class="carousel h-full" [style.transform]="'translateX(' + -currentIndex * 100 + '%)'">
     <div *ngFor="let item of items" class="carousel-item">
       <div [ngStyle]="{
@@ -12,10 +12,11 @@
         }
         @if (showButton) {
           <button class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded hover:text-gray-400 uppercase bg-black shadow relative"
-            [ngStyle]="{'bottom': imageDesktop ? '-40%' : '40%' }"
-            (click)="navigateTo()">
-            {{ buttonText }}
-          </button>
+          style="bottom: -40%;"
+          (click)="navigateTo()">
+          {{ buttonText }}
+        </button>
+        <!-- [ngStyle]="{'bottom': imageDesktop ? '-40%' : '40%' }" -->
         }
       </div>
     </div>
