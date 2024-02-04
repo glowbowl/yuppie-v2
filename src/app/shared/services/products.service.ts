@@ -245,8 +245,8 @@ export class ProductsService {
           {
             title: 'One',
             color: 'lightgray',
-            image: './assets/top-1000v1/web/1.jpg',
-            mobileImage: './assets/top-1000v1/mobile/1.JPG',
+            image: './assets/top-1000v1/web/1.png',
+            mobileImage: './assets/top-1000v1/mobile/1.png',
           },
         ];
       case '1000v2':

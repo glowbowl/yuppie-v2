@@ -14,7 +14,7 @@ import { MapsComponentComponent } from '../../shared/maps-component/maps-compone
 export class LocationPageComponent {
   public carouselItems = [
     {
-      title: 'Lokalizacje Yuppie',
+      title: 'Lokalizacja Yuppie',
       color: 'lightgray',
       image: './assets/top-location/web/1.PNG',
       mobileImage: './assets/top-location/mobile/1.PNG',
