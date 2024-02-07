@@ -1,0 +1,11 @@
+:host ::ng-deep {
+  mat-select {
+    width: 50px;
+
+    &[aria-expanded='true'] {
+      .mat-select-arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

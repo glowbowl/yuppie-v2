@@ -18,11 +18,13 @@ import {
 } from '@angular/core';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { LanguageTranslateComponent } from '../language-translate/language-translate.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'yup-header',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, LanguageTranslateComponent, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations: [

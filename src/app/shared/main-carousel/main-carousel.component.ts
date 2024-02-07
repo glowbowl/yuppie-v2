@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'yup-main-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './main-carousel.component.html',
   styleUrl: './main-carousel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -14,7 +15,7 @@ export class MainCarouselComponent implements OnInit, AfterViewInit {
   @Input() items: any[] = [];
   @Input() showTitle = false;
   @Input() showButton = true;
-  @Input() buttonText = 'Zobacz Więcej';
+  @Input() buttonText = '';
   @Input() navigateRoute: any = [
     {
       routeUrl: '/product',

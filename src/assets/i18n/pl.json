@@ -1,0 +1,59 @@
+{
+  "location": "Lokalizacja",
+  "products": "PRODUKTY",
+  "policyPrivacy": "Polityka prywatności",
+  "aboutUs": "O nas",
+  "ourProducts": "NASZE PRODUKTY",
+  "collaboration": "Współpraca",
+  "seeMore": "Zobacz Więcej",
+  "collaborationSection": {
+    "sectionTextFirst": "ZOSTAŃ AMBASADOREM YUPPIE Zostań Partnerem Biznesowym marki Yuppie – niezależnie od tego czy jesteś Klientem indywidualnym, czy prowadzisz sieć sklepów, mamy dla Ciebie coś specjalnego. Jednorazówki Yuppie są dostępne zarówno w sprzedaży detalicznej jak i hurtowej, dzięki czemu możesz bez problemu uzupełnić swój asortyment produktem najwyższej jakości. Atrakcyjne ceny i rabaty przy większych zamówieniach – co sprawia, że Yuppie to idealne rozwiązanie dla Przedsiębiorców.",
+    "sectionTextSecond": "W ten sposób łączymy indywidualne podejście do naszych klientów, jakość oraz profesjonalizm – napisz do nas, a my przygotujemy ofertę dopasowaną do Twoich potrzeb."
+  },
+  "collaborationPage": {
+    "sideTextTitle": "ZOSTAŃ AMBASADOREM YUPPIE",
+    "sideTextSub": "Zostań Partnerem Biznesowym marki Yuppie – niezależnie od tego czy jesteś Klientem indywidualnym, czy prowadzisz sieć sklepów, mamy dla Ciebie coś specjalnego. Jednorazówki Yuppie są dostępne zarówno w sprzedaży detalicznej jak i hurtowej, dzięki czemu możesz bez problemu uzupełnić swój asortyment produktem najwyższej jakości. Atrakcyjne ceny i rabaty przy większych zamówieniach – co sprawia, że Yuppie to idealne rozwiązanie dla Przedsiębiorców. W ten sposób łączymy indywidualne podejście do naszych klientów, jakość oraz profesjonalizm – napisz do nas, a my przygotujemy ofertę dopasowaną do Twoich potrzeb.",
+    "formTitle": "Jesteś gotowy na współprace? Umów spotkanie z przedstawicielem Yuppie Możesz też zadzwonić, wysłać maila, albo wpaść na kawę!",
+    "form": {
+      "name": "Imie i Nazwisko",
+      "email": "Email",
+      "phone": "Telefon",
+      "company": "Firma"
+    }
+  },
+  "productsCategory": {
+    "bestSolution": "NAJLEPSZE ROZWIĄZANIE DLA CIEBIE",
+    "ourTastes": "NASZE SMAKI",
+    "yupp700": {
+      "title": "Nasza linia Yuppie 700 to bestseller naszej marki  – ile osób, tyle smaków – a Ty, masz już swój ulubiony, w naszej dostępnej gamie 15 smaków?"
+    },
+    "yupp1000v1": {
+      "title": "Sprawdziłeś już Yuppie w nowej odsłonie? – już teraz wybierz swój ulubiony smak i zaspokój swoje zmysły o dowolnej porze dnia."
+    },
+    "yupp1000v2": {
+      "title": "Nowość wśród produktów Yuppie – kompaktowy, ergonomiczny kształt, a w nim aż 1000 zaciągnieś Twoich ulubionych smaków, co oznacza komfort w każdym calu."
+    },
+    "flavors": {
+      "blueberryIce": "Borówka z lodem",
+      "blackcurrant": "Czarna Porzeczka",
+      "mint": "Mięta",
+      "cottonCandy": "Wata Cukrowa",
+      "watermelonIce": "Arbuz z lodem",
+      "blueRazz": "Jeżyna z Jagodą",
+      "mixedBerries": "Mieszane Jagody",
+      "strawberryIce": "Truskawka z lodem",
+      "strawberryIceCream": "Lody Truskawkowe",
+      "strawberryKiwi": "Truskawka Kiwi",
+      "cappuccino": "Cappuccino",
+      "grapeIce": "Winogronowy Lód",
+      "guavaGranadilla": "Gujawa Granadilla",
+      "doubleApple": "Podwójne Jabłko",
+      "mixedOrange": "Mieszana Pomarańcza",
+      "mangoIce": "Mango z lodem",
+      "peachMango": "Brzoskwinia z Mango",
+      "colaIce": "Cola z lodem",
+      "energyDrink": "Energy Drink",
+      "lycheeIce": "Liczi z lodem"
+    }
+  }
+}

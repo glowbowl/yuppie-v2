@@ -4,14 +4,17 @@
   [ngStyle]="{ borderBottom: secondaryStyle ? '2px solid lightgray' : 'none' }"
 >
   <h1
-    class="font-black text-4xl md:text-5xl mb-8"
+    class="font-black text-4xl md:text-5xl mb-8 uppercase"
     [ngClass]="{
       'text-2xl md:text-3xl': secondaryStyle,
       'text-4xl md:text-5xl': !secondaryStyle
     }"
   >
-    {{ pageTitle }}
+    {{ pageTitle ? pageTitle : ( 'productsCategory.ourTastes' | translate ) }}
   </h1>
+  <p *ngIf="secondaryText" class="text-xl md:text-2xl font-light">
+    {{ secondaryText | translate }}
+  </p>
 </div>
 <div class="relative -mt-20 -mb-5 md:m-0">
   <div class="slider">
@@ -34,7 +37,7 @@
             class="font-semibold text-xl text-center"
             style="max-width: 135px; height: 28px"
           >
-            {{ item.title }}
+            {{ item.title | translate }}
           </div>
         </div>
       </li>

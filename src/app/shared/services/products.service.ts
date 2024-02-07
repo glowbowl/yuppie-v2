@@ -9,77 +9,77 @@ export class ProductsService {
       case '700':
         return [
           {
-            title: 'Blackcurrant',
+            title: 'productsCategory.flavors.blackcurrant',
             itemName: '700-b',
             image: './assets/categoryImg/700/700b.PNG',
           },
           {
-            title: 'Blueberry Ice',
+            title: 'productsCategory.flavors.blueberryIce',
             itemName: '700-bi',
             image: './assets/categoryImg/700/700bi.PNG',
           },
           {
-            title: 'Cotton Candy',
+            title: 'productsCategory.flavors.cottonCandy',
             itemName: '700-cc',
             image: './assets/categoryImg/700/700cc.PNG',
           },
           {
-            title: 'Cola Ice',
+            title: 'productsCategory.flavors.colaIce',
             itemName: '700-ci',
             image: './assets/categoryImg/700/700ci.PNG',
           },
           {
-            title: 'Double Apple',
+            title: 'productsCategory.flavors.doubleApple',
             itemName: '700-da',
             image: './assets/categoryImg/700/700da.PNG',
           },
           {
-            title: 'Energy Drink',
+            title: 'productsCategory.flavors.energyDrink',
             itemName: '700-ed',
             image: './assets/categoryImg/700/700ed.PNG',
           },
           {
-            title: 'Lychee Ice',
+            title: 'productsCategory.flavors.lycheeIce',
             itemName: '700-li',
             image: './assets/categoryImg/700/700li.PNG',
           },
           {
-            title: 'Mint',
+            title: 'productsCategory.flavors.mint',
             itemName: '700-m',
             image: './assets/categoryImg/700/700m.PNG',
           },
           {
-            title: 'Mango Ice',
+            title: 'productsCategory.flavors.mangoIce',
             itemName: '700-mi',
             image: './assets/categoryImg/700/700mi.PNG',
           },
           {
-            title: 'Mixed Orange',
+            title: 'productsCategory.flavors.mixedOrange',
             itemName: '700-mo',
             image: './assets/categoryImg/700/700mo.PNG',
           },
           {
-            title: 'Peach Mango',
+            title: 'productsCategory.flavors.peachMango',
             itemName: '700-pm',
             image: './assets/categoryImg/700/700pm.PNG',
           },
           {
-            title: 'Strawberry Ice',
+            title: 'productsCategory.flavors.strawberryIce',
             itemName: '700-si',
             image: './assets/categoryImg/700/700si.PNG',
           },
           {
-            title: 'Strawberry Ice Cream',
+            title: 'productsCategory.flavors.strawberryIceCream',
             itemName: '700-sic',
             image: './assets/categoryImg/700/700sic.PNG',
           },
           {
-            title: 'Strawberry Kiwi',
+            title: 'productsCategory.flavors.strawberryKiwi',
             itemName: '700-sk',
             image: './assets/categoryImg/700/700sk.PNG',
           },
           {
-            title: 'Watermelon Ice',
+            title: 'productsCategory.flavors.watermelonIce',
             itemName: '700-wi',
             image: './assets/categoryImg/700/700wi.PNG',
           },
@@ -87,52 +87,52 @@ export class ProductsService {
       case '1000v1':
         return [
           {
-            title: 'Blueberry Ice',
+            title: 'productsCategory.flavors.blueberryIce',
             itemName: '1000v1-bi',
             image: './assets/categoryImg/1000v1/ybiv1.png',
           },
           {
-            title: 'Blue Razz',
+            title: 'productsCategory.flavors.blueRazz',
             itemName: '1000v1-br',
             image: './assets/categoryImg/1000v1/ybrv1.png',
           },
           {
-            title: 'Cotton Candy',
+            title: 'productsCategory.flavors.cottonCandy',
             itemName: '1000v1-cc',
             image: './assets/categoryImg/1000v1/yccv1.png',
           },
           {
-            title: 'Cappuccino',
+            title: 'productsCategory.flavors.cappuccino',
             itemName: '1000v1-c',
             image: './assets/categoryImg/1000v1/ycv1.png',
           },
           {
-            title: 'Double Apple',
+            title: 'productsCategory.flavors.doubleApple',
             itemName: '1000v1-da',
             image: './assets/categoryImg/1000v1/ydav1.png',
           },
           {
-            title: 'Guava Granadilla',
+            title: 'productsCategory.flavors.guavaGranadilla',
             itemName: '1000v1-gg',
             image: './assets/categoryImg/1000v1/yggv1.png',
           },
           {
-            title: 'Grape Ice',
+            title: 'productsCategory.flavors.grapeIce',
             itemName: '1000v1-gi',
             image: './assets/categoryImg/1000v1/ygiv1.png',
           },
           {
-            title: 'Mixed Berries',
+            title: 'productsCategory.flavors.mixedBerries',
             itemName: '1000v1-mb',
             image: './assets/categoryImg/1000v1/ymbv1.png',
           },
           {
-            title: 'Strawberry Kiwi',
+            title: 'productsCategory.flavors.strawberryKiwi',
             itemName: '1000v1-sk',
             image: './assets/categoryImg/1000v1/yskv1.png',
           },
           {
-            title: 'Watermelon Ice',
+            title: 'productsCategory.flavors.watermelonIce',
             itemName: '1000v1-wi',
             image: './assets/categoryImg/1000v1/ywiv1.png',
           },
@@ -140,52 +140,52 @@ export class ProductsService {
       case '1000v2':
         return [
           {
-            title: 'Blueberry Ice',
+            title: 'productsCategory.flavors.blueberryIce',
             itemName: '1000v2-bi',
             image: './assets/categoryImg/1000v2/v2bi.png',
           },
           {
-            title: 'Blue Razz',
+            title: 'productsCategory.flavors.blueRazz',
             itemName: '1000v2-br',
             image: './assets/categoryImg/1000v2/v2br.png',
           },
           {
-            title: 'Cappuccino',
+            title: 'productsCategory.flavors.cappuccino',
             itemName: '1000v2-c',
             image: './assets/categoryImg/1000v2/v2c.png',
           },
           {
-            title: 'Cotton Candy',
+            title: 'productsCategory.flavors.cottonCandy',
             itemName: '1000v2-cc',
             image: './assets/categoryImg/1000v2/v2cc.png',
           },
           {
-            title: 'Double Apple',
+            title: 'productsCategory.flavors.doubleApple',
             itemName: '1000v2-da',
             image: './assets/categoryImg/1000v2/v2da.png',
           },
           {
-            title: 'Grape Ice',
+            title: 'productsCategory.flavors.grapeIce',
             itemName: '1000v2-gi',
             image: './assets/categoryImg/1000v2/v2gi.png',
           },
           {
-            title: 'Mint',
+            title: 'productsCategory.flavors.mint',
             itemName: '1000v2-m',
             image: './assets/categoryImg/1000v2/v2m.png',
           },
           {
-            title: 'Mixed Berries',
+            title: 'productsCategory.flavors.mixedBerries',
             itemName: '1000v2-mb',
             image: './assets/categoryImg/1000v2/v2mb.png',
           },
           {
-            title: 'Strawberry Ice Cream',
+            title: 'productsCategory.flavors.strawberryIceCream',
             itemName: '1000v2-ic',
             image: './assets/categoryImg/1000v2/v2sic.png',
           },
           {
-            title: 'Watermelon Ice',
+            title: 'productsCategory.flavors.watermelonIce',
             itemName: '1000v2-wi',
             image: './assets/categoryImg/1000v2/v2wi.png',
           },
@@ -260,6 +260,19 @@ export class ProductsService {
         ];
       default:
         return [];
+    }
+  }
+
+  getProductsSecondaryText(category: string) {
+    switch (category) {
+      case '700':
+        return 'productsCategory.yupp700.title';
+      case '1000v1':
+        return 'productsCategory.yupp1000v1.title';
+      case '1000v2':
+        return 'productsCategory.yupp1000v2.title';
+      default:
+        return '';
     }
   }
 }

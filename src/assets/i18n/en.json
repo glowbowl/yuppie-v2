@@ -1,0 +1,59 @@
+{
+  "location": "Location",
+  "products": "Products",
+  "policyPrivacy": "Privacy Policy",
+  "aboutUs": "About Us",
+  "ourProducts": "PRODUCTS",
+  "collaboration": "Collaboration",
+  "seeMore": "See More",
+  "collaborationSection": {
+    "sectionTextFirst": "BECOME A YUPPIE AMBASSADOR Become a Business Partner of the Yuppie brand – whether you are an individual customer or manage a chain of stores, we have something special for you. Yuppie disposables are available both in retail and wholesale, making it easy for you to supplement your inventory with a top-quality product. Attractive prices and discounts on larger orders make Yuppie the perfect solution for entrepreneurs.",
+    "sectionTextSecond": "This is how we combine an individual approach to our customers, quality, and professionalism – reach out to us, and we will prepare an offer tailored to your needs."
+  },
+  "collaborationPage": {
+    "sideTextTitle": "BECOME A YUPPIE AMBASSADOR",
+    "sideTextSub": "Become a Business Partner of the Yuppie brand – whether you are an individual customer or manage a chain of stores, we have something special for you. Yuppie disposables are available both in retail and wholesale, making it easy for you to supplement your inventory with a top-quality product. Attractive prices and discounts on larger orders make Yuppie the perfect solution for entrepreneurs. This is how we combine an individual approach to our customers, quality, and professionalism – reach out to us, and we will prepare an offer tailored to your needs.",
+    "formTitle": "Are you ready to collaborate? Schedule a meeting with a Yuppie representative. You can also call, send an email, or drop by for a coffee!",
+    "form": {
+      "name": "Name and Surname",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company"
+    }
+  },
+  "productsCategory": {
+    "bestSolution": "THE BEST SOLUTION FOR YOU",
+    "ourTastes": "Flavors",
+    "yupp700": {
+      "title": "Our Yuppie 700 line is the bestseller of our brand – as many people, as many flavors. Have you found your favorite among our available 15 flavors?"
+    },
+    "yupp1000v1": {
+      "title": "Have you checked out the new version of Yuppie? Choose your favorite flavor now and indulge your senses at any time of the day."
+    },
+    "yupp1000v2": {
+      "title": "A novelty among Yuppie products – compact, ergonomic shape that holds up to 1000 draws of your favorite flavors, ensuring comfort in every aspect."
+    },
+    "flavors": {
+      "blueberryIce": "Blueberry Ice",
+      "blackcurrant": "Blackcurrant",
+      "mint": "Mint",
+      "cottonCandy": "Cotton Candy",
+      "watermelonIce": "Watermelon Ice",
+      "blueRazz": "Blue Razz",
+      "mixedBerries": "Mixed Berries",
+      "strawberryIce": "Strawberry Ice",
+      "strawberryIceCream": "Strawberry Ice Cream",
+      "strawberryKiwi": "Strawberry Kiwi",
+      "cappuccino": "Cappuccino",
+      "grapeIce": "Grape Ice",
+      "guavaGranadilla": "Guava Granadilla",
+      "doubleApple": "Double Apple",
+      "mixedOrange": "Mixed Orange",
+      "mangoIce": "Mango Ice",
+      "peachMango": "Peach Mango",
+      "colaIce": "Cola Ice",
+      "energyDrink": "Energy Drink",
+      "lycheeIce": "Lychee Ice"
+    }
+  }
+}
