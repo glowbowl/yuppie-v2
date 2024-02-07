@@ -2,101 +2,112 @@
   <div class="w-full md:w-1/2 flex flex-col leading-snug items-center">
     <div class="flex flex-col w-full md:w-4/5 gap-7">
       <div class="uppercase text-3xl md:text-4xl font-bold">
-        {{ 'collaborationPage.sideTextTitle' | translate }}
+        {{ "collaborationPage.sideTextTitle" | translate }}
       </div>
       <div class="font-bold" style="color: #6a6a6a">
-        {{ 'collaborationPage.sideTextSub' | translate }}
+        {{ "collaborationPage.sideTextSub" | translate }}
       </div>
     </div>
   </div>
   <div class="w-full md:w-1/2 flex justify-center mt-10 md:mt-0">
-    <form
-      class="rounded-3xl bg-white flex flex-col items-center h-full w-full md:w-4/5 py-12 px-10"
-    >
+    <form class="rounded-3xl bg-white flex flex-col items-center h-full w-full md:w-4/5 py-12 px-10">
       <div class="text-2xl font-bold w-full text-center mb-6">
-        {{ 'collaborationPage.formTitle' | translate }}
+        {{ "collaborationPage.formTitle" | translate }}
       </div>
       <div class="flex w-full flex-col mb-11 gap-1">
         <div class="formControls">
-          <label class="submitLabel" for="name"
-            > {{ 'collaborationPage.form.name' | translate }} <span class="text-red-600">*</span></label
-          >
+          <label class="submitLabel" for="name">
+            {{ "collaborationPage.form.name" | translate }}
+            <span class="text-red-600">*</span></label>
           <div class="submitInputContainer">
-            <input
-              class="submitInput"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Wpisz swoje imię"
-              [formControl]="$any(contactForm).get('name')"
-              required
-            />
-            <div
-              class="error-input-message"
-              *ngIf="formControls.name.invalid && formControls.name.touched"
-            >
-              Imię i nazwisko są wymagane.
+            <input class="submitInput" type="text" id="name" name="name" [placeholder]="
+                'collaborationPage.formPlaceholders.name' | translate
+              " [formControl]="$any(contactForm).get('name')" required />
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.name.errors?.['required'] && formControls.name.touched">
+              {{ "collaborationPage.formErrors.nameRequired" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.name.errors?.['minlength'] && formControls.name.touched">
+              {{ "collaborationPage.formErrors.minLength" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.name.errors?.['maxlength'] && formControls.name.touched">
+              {{ "collaborationPage.formErrors.maxLength" | translate }}
             </div>
           </div>
         </div>
 
         <div class="formControls">
-          <label class="submitLabel" for="number"
-            > {{ 'collaborationPage.form.email' | translate }} <span class="text-red-600">*</span></label
-          >
+          <label class="submitLabel" for="number">
+            {{ "collaborationPage.form.email" | translate }}
+            <span class="text-red-600">*</span></label>
           <div class="submitInputContainer">
-            <input
-              class="submitInput"
-              type="e-mail"
-              id="emailOrder"
-              name="e-mail"
-              placeholder="Twoja poczta"
-              [formControl]="$any(contactForm).get('email')"
-              required
-            />
-            <div
-              class="error-input-message"
-              *ngIf="formControls.email.invalid && formControls.email.touched"
-            >
-              Proszę podać poprawny adres e-mail.
+            <input class="submitInput" type="e-mail" id="emailOrder" name="e-mail" [placeholder]="
+                'collaborationPage.formPlaceholders.email' | translate
+              " [formControl]="$any(contactForm).get('email')" required />
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.email.errors?.['required'] && formControls.email.touched">
+              {{ "collaborationPage.formErrors.emailRequired" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.email?.errors?.['email'] && !formControls.email?.errors?.['minlength'] && !formControls.email?.errors?.['maxlength'] && formControls.email.touched">
+              {{ "collaborationPage.formErrors.emailValid" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.email?.errors?.['minlength'] && formControls.email.touched">
+              {{ "collaborationPage.formErrors.minLength" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.email?.errors?.['maxlength'] && formControls.email.touched">
+              {{ "collaborationPage.formErrors.maxLength" | translate }}
             </div>
           </div>
         </div>
 
         <div class="formControls">
-          <label class="submitLabel" for="number"
-            > {{ 'collaborationPage.form.phone' | translate }} <span class="text-red-600">*</span></label
-          >
+          <label class="submitLabel" for="number">
+            {{ "collaborationPage.form.phone" | translate }}
+            <span class="text-red-600">*</span></label>
           <div class="submitInputContainer">
-            <input
-              class="submitInput"
-              type="text"
-              id="number"
-              name="number"
-              placeholder="Wprowadź numer"
-              [formControl]="$any(contactForm).get('number')"
-              required
-            />
-            <div
-              class="error-input-message"
-              *ngIf="formControls.number.invalid && formControls.number.touched"
-            >
-              Proszę wpisać poprawny numer telefonu.
+            <input class="submitInput" type="text" id="number" name="number" [placeholder]="
+                'collaborationPage.formPlaceholders.phone' | translate
+              " [formControl]="$any(contactForm).get('number')" required />
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.number.errors?.['required'] && formControls.number.touched">
+              {{ "collaborationPage.formErrors.phoneRequired" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.number.errors?.['minlength'] && formControls.number.touched">
+              {{ "collaborationPage.formErrors.minLength" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.number?.errors?.['maxlength'] && formControls.number.touched">
+              {{ "collaborationPage.formErrors.maxLength" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.number?.errors?.['pattern'] && !formControls.number.errors?.['minlength'] && !formControls.number?.errors?.['maxlength'] && formControls.number.touched">
+              {{ "collaborationPage.formErrors.phoneValid" | translate }}
             </div>
           </div>
         </div>
 
         <div class="formControls">
-          <label class="submitLabel" for="number"> {{ 'collaborationPage.form.company' | translate }} </label>
+          <label class="submitLabel" for="number">
+            {{ "collaborationPage.form.company" | translate }}
+          </label>
           <div class="submitInputContainer">
-            <input
-              class="submitInput"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Wpisz swoje imię"
-              [formControl]="$any(contactForm).get('message')"
-            />
+            <input class="submitInput" type="text" id="message" name="message" [placeholder]="
+                'collaborationPage.formPlaceholders.company' | translate
+              " [formControl]="$any(contactForm).get('message')" />
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.message.errors?.['minlength'] && formControls.message.touched">
+              {{ "collaborationPage.formErrors.minLength" | translate }}
+            </div>
+            <div class="error-input-message text-[13px]"
+              *ngIf="formControls.message?.errors?.['maxlength'] && formControls.message.touched">
+              {{ "collaborationPage.formErrors.maxLength" | translate }}
+            </div>
           </div>
         </div>
       </div>
@@ -111,12 +122,11 @@
         Państwu uprawnieniach, znajduje się w Polityce prywatności
       </div>
 
-      <button
-        type="button"
-        (click)="sendEmail()"
-        class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded-3xl hover:text-gray-200 uppercase bg-black"
-      >
-        <span *ngIf="!loader">Wyślij zapytanie</span>
+      <button type="button" (click)="sendEmail()"
+        class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded-3xl hover:text-gray-200 uppercase bg-black">
+        <span *ngIf="!loader">{{
+          "collaborationPage.submitButton" | translate
+          }}</span>
         <div *ngIf="loader" class="loader"></div>
       </button>
     </form>

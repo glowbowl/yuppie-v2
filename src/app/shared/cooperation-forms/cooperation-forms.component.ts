@@ -97,10 +97,10 @@ export class CooperationFormsComponent implements OnInit {
 
   private initForm() {
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      number: ['', [Validators.required]],
-      message: [''],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]],
+      email: ['', [Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(40)]],
+      number: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(15), Validators.pattern('[- +()0-9]+')]],
+      message: ['',[Validators.maxLength(100), Validators.minLength(3)]],
     });
   }
 }
