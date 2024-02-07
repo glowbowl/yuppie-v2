@@ -1,0 +1,7 @@
+<div class="flex h-full mr-6 justify-center items-center bg-white">
+  <mat-select [(value)]="selectedLanguage" class="border px-1 py-2 rounded">
+    <mat-option *ngFor="let language of translate.getLangs()" [value]="language" (click)="translate.use(language)">
+      {{ language }}
+    </mat-option>
+  </mat-select>
+</div>

@@ -14,7 +14,7 @@
           <button class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded hover:text-gray-400 uppercase bg-black shadow relative"
           style="bottom: -40%;"
           (click)="navigateTo()">
-          {{ buttonText }}
+          {{ buttonText ? buttonText : ('seeMore' | translate) }}
         </button>
         <!-- [ngStyle]="{'bottom': imageDesktop ? '-40%' : '40%' }" -->
         }

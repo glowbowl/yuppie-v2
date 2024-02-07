@@ -10,6 +10,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { TranslateModule } from '@ngx-translate/core';
 import { Observable, catchError, map, of } from 'rxjs';
 
 @Component({
@@ -20,29 +21,30 @@ import { Observable, catchError, map, of } from 'rxjs';
     GoogleMapsModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    TranslateModule
   ],
   templateUrl: './maps-component.component.html',
   styleUrl: './maps-component.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MapsComponentComponent implements OnInit {
-  public apiLoaded: Observable<boolean>;
+  // public apiLoaded: Observable<boolean>;
   public markers: any = [];
 
-  center: google.maps.LatLngLiteral = { lat: 52, lng: 20 };
-  zoom = 6;
+  center: google.maps.LatLngLiteral = { lat: 49.787030, lng: 22.767703 };
+  zoom = 15;
   display!: google.maps.LatLngLiteral;
 
   constructor(httpClient: HttpClient) {
-    this.apiLoaded = httpClient
-      .jsonp(
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlMGFTXptwklHVEbyVefKRZVXvefNk_o',
-        'callback'
-      )
-      .pipe(
-        map(() => true),
-        catchError(() => of(false))
-      );
+    // this.apiLoaded = httpClient
+    //   .jsonp(
+    //     'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlMGFTXptwklHVEbyVefKRZVXvefNk_o',
+    //     'callback'
+    //   )
+    //   .pipe(
+    //     map(() => true),
+    //     catchError(() => of(false))
+    //   );
   }
 
   ngOnInit(): void {
@@ -60,14 +62,14 @@ export class MapsComponentComponent implements OnInit {
   addMarker() {
     this.markers.push({
       position: {
-        lat: this.center.lat + ((Math.random() - 0.5) * 2) / 10,
-        lng: this.center.lng + ((Math.random() - 0.5) * 2) / 10,
+        lat: 49.786959,
+        lng: 22.766505,
       },
-      label: {
-        color: 'black',
-        text: 'Marker label ' + (this.markers.length + 1),
-      },
-      title: 'Marker title ' + (this.markers.length + 1),
+      title: 'Yuppie Office',
+      options: {
+        draggable: false,
+        icon: './assets/img/map_logo.png'
+     }
     });
   }
 }

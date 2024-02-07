@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { GalleryGridComponent } from '../../shared/gallery-grid/gallery-grid.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { ContactBlockComponent } from '../../shared/contact-block/contact-block.component';
 
 @Component({
   selector: 'yup-about-us-page',
   standalone: true,
-  imports: [MainCarouselComponent, GalleryGridComponent],
+  imports: [MainCarouselComponent, GalleryGridComponent, TranslateModule, ContactBlockComponent],
   templateUrl: './about-us-page.component.html',
   styleUrl: './about-us-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

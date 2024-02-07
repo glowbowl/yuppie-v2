@@ -8,18 +8,20 @@ import {
   Renderer2,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'yup-all-product-carousel',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, TranslateModule],
   templateUrl: './all-product-carousel.component.html',
   styleUrl: './all-product-carousel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AllProductCarouselComponent implements OnChanges {
   @Input() items: any[] = [];
-  @Input() pageTitle: string = 'NASZE SMAKI';
+  @Input() pageTitle: string = '';
+  @Input() secondaryText: string = '';
   @Input() secondaryStyle: boolean = false;
   @Input() category: string = '700';
   public visibleSlides: number = 4;

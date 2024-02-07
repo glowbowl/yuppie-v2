@@ -1,12 +1,20 @@
-<yup-main-carousel [items]="carouselItems" [showButton]="false" [showTitle]="false"></yup-main-carousel>
+<yup-main-carousel
+  [items]="carouselItems"
+  [showButton]="false"
+  [showTitle]="false"
+></yup-main-carousel>
 <div class="max-w-screen-xl my-0 mx-auto w-11/12">
   <div class="mt-20 mb-10 md:my-20">
-    <yup-all-product-carousel [items]="carouselProductItems" [category]="category"></yup-all-product-carousel>
+    <yup-all-product-carousel
+      [items]="carouselProductItems"
+      [category]="category"
+      [secondaryText]="secondaryText"
+    ></yup-all-product-carousel>
   </div>
   <div class="mt-10 mb-20 container mx-auto">
     <div class="flex flex-col items-center mb-8">
       <h1 class="font-black text-4xl md:text-5xl mb-8">
-        NAJLEPSZE ROZWIĄZANIE DLA CIEBIE
+        {{ 'productsCategory.bestSolution' | translate }}
       </h1>
     </div>
     <yup-gallery-grid [items]="productGalery"></yup-gallery-grid>
