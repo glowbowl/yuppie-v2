@@ -28,7 +28,7 @@ import { Observable, catchError, map, of } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MapsComponentComponent implements OnInit {
-  // public apiLoaded: Observable<boolean>;
+  public apiLoaded: Observable<boolean>;
   public markers: any = [];
 
   center: google.maps.LatLngLiteral = { lat: 49.787030, lng: 22.767703 };
@@ -36,15 +36,15 @@ export class MapsComponentComponent implements OnInit {
   display!: google.maps.LatLngLiteral;
 
   constructor(httpClient: HttpClient) {
-    // this.apiLoaded = httpClient
-    //   .jsonp(
-    //     'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlMGFTXptwklHVEbyVefKRZVXvefNk_o',
-    //     'callback'
-    //   )
-    //   .pipe(
-    //     map(() => true),
-    //     catchError(() => of(false))
-    //   );
+    this.apiLoaded = httpClient
+      .jsonp(
+        'https://maps.googleapis.com/maps/api/js?key=AIzaSyCJlMGFTXptwklHVEbyVefKRZVXvefNk_o',
+        'callback'
+      )
+      .pipe(
+        map(() => true),
+        catchError(() => of(false))
+      );
   }
 
   ngOnInit(): void {
