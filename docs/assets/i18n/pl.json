@@ -6,6 +6,7 @@
   "ourProducts": "NASZE PRODUKTY",
   "collaboration": "Współpraca",
   "seeMore": "Zobacz Więcej",
+  "support": "WSPARCIE",
   "collaborationSection": {
     "sectionTextFirst": "ZOSTAŃ AMBASADOREM YUPPIE Zostań Partnerem Biznesowym marki Yuppie – niezależnie od tego czy jesteś Klientem indywidualnym, czy prowadzisz sieć sklepów, mamy dla Ciebie coś specjalnego. Jednorazówki Yuppie są dostępne zarówno w sprzedaży detalicznej jak i hurtowej, dzięki czemu możesz bez problemu uzupełnić swój asortyment produktem najwyższej jakości. Atrakcyjne ceny i rabaty przy większych zamówieniach – co sprawia, że Yuppie to idealne rozwiązanie dla Przedsiębiorców.",
     "sectionTextSecond": "W ten sposób łączymy indywidualne podejście do naszych klientów, jakość oraz profesjonalizm – napisz do nas, a my przygotujemy ofertę dopasowaną do Twoich potrzeb."
@@ -50,6 +51,13 @@
   "productsCategory": {
     "bestSolution": "NAJLEPSZE ROZWIĄZANIE DLA CIEBIE",
     "ourTastes": "NASZE SMAKI",
+    "relatedProducts": "Produkty powiązane",
+    "specs": {
+      "batteryCapacity": "Pojemność baterii: ",
+      "liquidCapacity": "Pojemność kapsułki: ",
+      "resistance": "Rezystancja cewki: ",
+      "puffs": "Zaciągnięć: do "
+    },
     "yupp700": {
       "title": "Nasza linia Yuppie 700 to bestseller naszej marki  – ile osób, tyle smaków – a Ty, masz już swój ulubiony, w naszej dostępnej gamie 15 smaków?"
     },
