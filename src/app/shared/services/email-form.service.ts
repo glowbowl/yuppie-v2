@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class EmailFormService {
-  private email = 'yuppieukraine@gmail.com';
+  private email = 'yuppie@yuppie.com.pl';
   private encodedEmail = encodeURIComponent(this.email);
-  private url = `https://formsubmit.co/${this.encodedEmail}`;
+  private url = `https://formsubmit.co/${this.email}`;
 
   constructor(private http: HttpClient) {}
 

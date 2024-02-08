@@ -275,4 +275,34 @@ export class ProductsService {
         return '';
     }
   }
+
+  getProductsSpecs(category: string) {
+    switch (category) {
+      case '700':
+        return {
+          'battery': '420 mAh',
+          'capacity': '2 ml',
+          'resistance': '1.55 ohm',
+          'puffs': '700',
+        };
+      case '1000v1':
+        return {
+          'battery': '550 mAh',
+          'capacity': '2 ml',
+          'resistance': '1.4 ohm',
+          'puffs': '1000',
+        };
+      case '1000v2':
+        return {
+          'battery': '550 mAh',
+          'capacity': '2 ml',
+          'resistance': '1.4 ohm',
+          'puffs': '1000',
+        };
+      default:
+        return {
+
+        };
+    }
+  }
 }

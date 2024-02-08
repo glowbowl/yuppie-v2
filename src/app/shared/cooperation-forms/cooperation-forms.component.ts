@@ -51,7 +51,7 @@ export class CooperationFormsComponent implements OnInit {
         'Imię i nazwisko': this.contactForm.value.name,
         'E-mail': this.contactForm.value.email,
         'Telefon': this.contactForm.value.number,
-        'Wiadomość': this.contactForm.value.message,
+        'Firma': this.contactForm.value.message,
         _captcha: 'false',
       })
       .pipe(
