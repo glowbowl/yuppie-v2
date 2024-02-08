@@ -6,6 +6,7 @@
   "ourProducts": "PRODUCTS",
   "collaboration": "Collaboration",
   "seeMore": "See More",
+  "support": "SUPPORT",
   "collaborationSection": {
     "sectionTextFirst": "BECOME A YUPPIE AMBASSADOR Become a Business Partner of the Yuppie brand – whether you are an individual customer or manage a chain of stores, we have something special for you. Yuppie disposables are available both in retail and wholesale, making it easy for you to supplement your inventory with a top-quality product. Attractive prices and discounts on larger orders make Yuppie the perfect solution for entrepreneurs.",
     "sectionTextSecond": "This is how we combine an individual approach to our customers, quality, and professionalism – reach out to us, and we will prepare an offer tailored to your needs."
@@ -51,6 +52,12 @@
     "bestSolution": "THE BEST SOLUTION FOR YOU",
     "ourTastes": "Flavors",
     "relatedProducts": "Related Products",
+    "specs": {
+      "batteryCapacity": "Battery capacity: ",
+      "liquidCapacity": "Liquid capacity: ",
+      "resistance": "Resistance: ",
+      "puffs": "Puffs: up to "
+    },
     "yupp700": {
       "title": "Our Yuppie 700 line is the bestseller of our brand – as many people, as many flavors. Have you found your favorite among our available 15 flavors?"
     },

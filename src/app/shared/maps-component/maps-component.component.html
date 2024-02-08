@@ -12,8 +12,7 @@
       [center]="center"
       [zoom]="zoom"
       [options]="{
-        streetViewControl: false,
-        mapTypeControl: false,
+        disableDefaultUI: true,
       }"
       (mapClick)="moveMap($event)"
       (mapMousemove)="move($event)"

@@ -4,6 +4,7 @@ import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.
 import { MapsComponentComponent } from '../../shared/maps-component/maps-component.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ContactLocationBlockComponent } from '../../shared/contact-location-block/contact-location-block.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'yup-location-page',
@@ -14,6 +15,7 @@ import { ContactLocationBlockComponent } from '../../shared/contact-location-blo
     MapsComponentComponent,
     TranslateModule,
     ContactLocationBlockComponent,
+    RouterLink,
   ],
   templateUrl: './location-page.component.html',
   styleUrl: './location-page.component.scss',

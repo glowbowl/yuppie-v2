@@ -16,6 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class ItemPageComponent implements OnDestroy {
   public currentItem: any;
   public carouselProductItems: any = [];
+  public itemSpecs: any;
   public category: string = '';
   public itemName: string = '';
 
@@ -32,6 +33,7 @@ export class ItemPageComponent implements OnDestroy {
       this.category = params.get('category') || 'all';
       this.itemName = params.get('name') || 'all';
       this.carouselProductItems = this.productService.getProductsByCategory(this.category);
+      this.itemSpecs = this.productService.getProductsSpecs(this.category);
       this.currentItem = this.carouselProductItems.find((item: any) => item.itemName === this.itemName);
       this.carouselProductItems = this.carouselProductItems.filter((item: any) => item.itemName !== this.itemName);
       this.cdr.markForCheck();

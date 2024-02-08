@@ -38,12 +38,10 @@
             odio, sed mattis eros. Cras lacinia metus a mi aliquet, a pharetra
             tortor mattis.
             <div class="flex flex-col mt-5">
-              <span> BATERIA: <span class="font-bold">500 mAh</span> </span>
-              <span> LICZBA DYMÓW: <span class="font-bold">600</span> </span>
-              <span>
-                SÓL NIKOTYNOWA: <span class="font-bold">20 mg</span>
-              </span>
-              <span> PŁYN: <span class="font-bold">2,0 ml</span> </span>
+              <span> {{ 'productsCategory.specs.batteryCapacity' | translate }} <span class="font-bold">{{ itemSpecs.battery }}</span> </span>
+              <span> {{ 'productsCategory.specs.liquidCapacity' | translate }} <span class="font-bold">{{ itemSpecs.capacity }}</span> </span>
+              <span> {{ 'productsCategory.specs.resistance' | translate }} <span class="font-bold">{{ itemSpecs.resistance }}</span> </span>
+              <span> {{ 'productsCategory.specs.puffs' | translate }} <span class="font-bold">{{ itemSpecs.puffs }}</span> </span>
             </div>
           </div>
         </div>
