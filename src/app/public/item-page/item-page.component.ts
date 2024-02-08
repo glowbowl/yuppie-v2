@@ -3,11 +3,12 @@ import { AllProductCarouselComponent } from '../../shared/all-product-carousel/a
 import { Subject, takeUntil } from 'rxjs';
 import { ProductsService } from '../../shared/services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'yup-item-page',
   standalone: true,
-  imports: [AllProductCarouselComponent],
+  imports: [AllProductCarouselComponent, TranslateModule],
   templateUrl: './item-page.component.html',
   styleUrl: './item-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -19,7 +19,6 @@
       <img src="./assets/img/white_logo.png" alt="Logo" class="h-14 mr-2">
     </div>
     <nav class="hidden md:flex space-x-10 font-semibold text-lg uppercase">
-      <yup-language-translate></yup-language-translate>
       <a class="cursor-pointer hover:text-gray-400" routerLink="/">Home</a>
       <div class="relative">
         <a class="cursor-pointer hover:text-gray-400" (click)="toogleMenu()">{{ 'products' | translate }}</a>
@@ -34,6 +33,7 @@
       <a class="cursor-pointer hover:text-gray-400" routerLink="/cooperation">{{ 'collaboration' | translate }}</a>
       <a class="cursor-pointer hover:text-gray-400" routerLink="/location">{{ 'location' | translate }}</a>
       <a class="cursor-pointer hover:text-gray-400" routerLink="/about-us">{{ 'aboutUs' | translate }}</a>
+      <yup-language-translate></yup-language-translate>
     </nav>
   </div>
 </header>
@@ -96,5 +96,6 @@
     <a routerLink="/cooperation">{{ 'collaboration' | translate }}</a>
     <a routerLink="/location">{{ 'location' | translate }}</a>
     <a routerLink="/about-us">{{ 'aboutUs' | translate }}</a>
+    <yup-language-translate></yup-language-translate>
   </nav>
 </div>
