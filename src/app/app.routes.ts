@@ -8,7 +8,7 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'location',
+    path: 'contact',
     loadComponent: () =>
       import('./public/location-page/location-page.component').then((m) => m.LocationPageComponent),
     pathMatch: 'full',

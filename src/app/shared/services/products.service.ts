@@ -11,77 +11,77 @@ export class ProductsService {
           {
             title: 'productsCategory.flavors.blackcurrant',
             itemName: '700-b',
-            image: './assets/categoryImg/700/700b.PNG',
+            image: './assets/categoryImg/700/700b.png',
           },
           {
             title: 'productsCategory.flavors.blueberryIce',
             itemName: '700-bi',
-            image: './assets/categoryImg/700/700bi.PNG',
+            image: './assets/categoryImg/700/700bi.png',
           },
           {
             title: 'productsCategory.flavors.cottonCandy',
             itemName: '700-cc',
-            image: './assets/categoryImg/700/700cc.PNG',
+            image: './assets/categoryImg/700/700cc.png',
           },
           {
             title: 'productsCategory.flavors.colaIce',
             itemName: '700-ci',
-            image: './assets/categoryImg/700/700ci.PNG',
+            image: './assets/categoryImg/700/700ci.png',
           },
           {
             title: 'productsCategory.flavors.doubleApple',
             itemName: '700-da',
-            image: './assets/categoryImg/700/700da.PNG',
+            image: './assets/categoryImg/700/700da.png',
           },
           {
             title: 'productsCategory.flavors.energyDrink',
             itemName: '700-ed',
-            image: './assets/categoryImg/700/700ed.PNG',
+            image: './assets/categoryImg/700/700ed.png',
           },
           {
             title: 'productsCategory.flavors.lycheeIce',
             itemName: '700-li',
-            image: './assets/categoryImg/700/700li.PNG',
+            image: './assets/categoryImg/700/700li.png',
           },
           {
             title: 'productsCategory.flavors.mint',
             itemName: '700-m',
-            image: './assets/categoryImg/700/700m.PNG',
+            image: './assets/categoryImg/700/700m.png',
           },
           {
             title: 'productsCategory.flavors.mangoIce',
             itemName: '700-mi',
-            image: './assets/categoryImg/700/700mi.PNG',
+            image: './assets/categoryImg/700/700mi.png',
           },
           {
             title: 'productsCategory.flavors.mixedOrange',
             itemName: '700-mo',
-            image: './assets/categoryImg/700/700mo.PNG',
+            image: './assets/categoryImg/700/700mo.png',
           },
           {
             title: 'productsCategory.flavors.peachMango',
             itemName: '700-pm',
-            image: './assets/categoryImg/700/700pm.PNG',
+            image: './assets/categoryImg/700/700pm.png',
           },
           {
             title: 'productsCategory.flavors.strawberryIce',
             itemName: '700-si',
-            image: './assets/categoryImg/700/700si.PNG',
+            image: './assets/categoryImg/700/700si.png',
           },
           {
             title: 'productsCategory.flavors.strawberryIceCream',
             itemName: '700-sic',
-            image: './assets/categoryImg/700/700sic.PNG',
+            image: './assets/categoryImg/700/700sic.png',
           },
           {
             title: 'productsCategory.flavors.strawberryKiwi',
             itemName: '700-sk',
-            image: './assets/categoryImg/700/700sk.PNG',
+            image: './assets/categoryImg/700/700sk.png',
           },
           {
             title: 'productsCategory.flavors.watermelonIce',
             itemName: '700-wi',
-            image: './assets/categoryImg/700/700wi.PNG',
+            image: './assets/categoryImg/700/700wi.png',
           },
         ];
       case '1000v1':
@@ -208,12 +208,12 @@ export class ProductsService {
         ];
       case '1000v1':
         return [
-          './assets/categoryImg/1000v1-gallery/1.JPG',
-          './assets/categoryImg/1000v1-gallery/2.JPG',
-          './assets/categoryImg/1000v1-gallery/3.JPG',
-          './assets/categoryImg/1000v1-gallery/4.JPG',
-          './assets/categoryImg/1000v1-gallery/5.JPG',
-          './assets/categoryImg/1000v1-gallery/6.JPG',
+          './assets/categoryImg/1000v1-gallery/1.png',
+          './assets/categoryImg/1000v1-gallery/2.png',
+          './assets/categoryImg/1000v1-gallery/3.png',
+          './assets/categoryImg/1000v1-gallery/4.png',
+          './assets/categoryImg/1000v1-gallery/5.png',
+          './assets/categoryImg/1000v1-gallery/6.png',
         ];
       case '1000v2':
         return [
