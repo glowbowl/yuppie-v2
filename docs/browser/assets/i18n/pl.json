@@ -1,0 +1,94 @@
+{
+  "location": "Lokalizacja",
+  "contact": "Kontakt",
+  "products": "PRODUKTY",
+  "policyPrivacy": "Polityka prywatności",
+  "aboutUs": "O nas",
+  "ourProducts": "NASZE PRODUKTY",
+  "collaboration": "Współpraca",
+  "seeMore": "Zobacz Więcej",
+  "support": "WSPARCIE",
+  "collaborationSection": {
+    "sectionTextFirst": "ZOSTAŃ AMBASADOREM YUPPIE Zostań Partnerem Biznesowym marki Yuppie – niezależnie od tego czy jesteś Klientem indywidualnym, czy prowadzisz sieć sklepów, mamy dla Ciebie coś specjalnego. Jednorazówki Yuppie są dostępne zarówno w sprzedaży detalicznej jak i hurtowej, dzięki czemu możesz bez problemu uzupełnić swój asortyment produktem najwyższej jakości. Atrakcyjne ceny i rabaty przy większych zamówieniach – co sprawia, że Yuppie to idealne rozwiązanie dla Przedsiębiorców.",
+    "sectionTextSecond": "W ten sposób łączymy indywidualne podejście do naszych klientów, jakość oraz profesjonalizm – napisz do nas, a my przygotujemy ofertę dopasowaną do Twoich potrzeb."
+  },
+  "collaborationPage": {
+    "sideTextTitle": "ZOSTAŃ AMBASADOREM YUPPIE",
+    "sideTextSub": "Zostań Partnerem Biznesowym marki Yuppie – niezależnie od tego czy jesteś Klientem indywidualnym, czy prowadzisz sieć sklepów, mamy dla Ciebie coś specjalnego. Jednorazówki Yuppie są dostępne zarówno w sprzedaży detalicznej jak i hurtowej, dzięki czemu możesz bez problemu uzupełnić swój asortyment produktem najwyższej jakości. Atrakcyjne ceny i rabaty przy większych zamówieniach – co sprawia, że Yuppie to idealne rozwiązanie dla Przedsiębiorców. W ten sposób łączymy indywidualne podejście do naszych klientów, jakość oraz profesjonalizm – napisz do nas, a my przygotujemy ofertę dopasowaną do Twoich potrzeb.",
+    "formTitle": "Jesteś gotowy na współprace? Umów spotkanie z przedstawicielem Yuppie Możesz też zadzwonić, wysłać maila, albo wpaść na kawę!",
+    "form": {
+      "name": "Imie i Nazwisko",
+      "email": "Email",
+      "phone": "Telefon",
+      "company": "Firma"
+    },
+    "formPlaceholders": {
+      "name": "Wpisz swoje imię",
+      "email": "Wpisz swój email",
+      "phone": "Wpisz swój telefon",
+      "company": "Wpisz swoją firmę"
+    },
+    "formErrors": {
+      "nameRequired": "Imię i nazwisko są wymagane.",
+      "emailRequired": "Email jest wymagany.",
+      "emailValid": "Proszę podać poprawny adres e-mail.",
+      "phoneRequired": "Numer telefonu jest wymagany",
+      "phoneValid": "Wprowadź prawidłowy numer telefonu.",
+      "minLength": "Dane wejściowe są za krótkie",
+      "maxLength": "Dane wejściowe są za długie"
+    },
+    "submitButton": "Wyślij zapytanie"
+  },
+  "aboutUsPage": {
+    "textFirst": "Czy wiecie co kryje się pod Brandem Yuppie? Yuppie to zupełna nowość na rynku i innowacyjne podejście do spożywania nikotyny. Eksplozja wyrazistych smaków zamkniętych w niewielkim, smukłym urządzeniu – bez ładowania, bez napełniania liquidu – korzystasz kiedy chcesz okazjonalnie lub na co dzień. Czysta radość i komfort użytkowania w kilku odsłonach, niezależnie od tego czy dopiero rozpoczynasz swoją przygodę z puszczaniem dymka, czy jesteś specjalistą puszczania gęstych chmur to e-papieros Yuppie to produkt, który Cię zaskoczy!",
+    "textSecond": "Jak to działa? Yuppie nie tylko wywołuje uśmiech na twarzy, ale jego obsługa jest dziecinnie prosta – wystarczy otworzyć opakowanie, wyjąć ustnik, zaciągnąć się i poczuć orzeźwiający smak wpływający na zmysły. Ta prostota sprawia, że e-papierosy Yuppie to idealne rozwiązanie dla osób, które cenią sobie wygodę i chcą cieszyć się chwilą."
+  },
+  "locationPage": {
+    "title": "Gdzie nas znajdziesz",
+    "subText": "Spodobały Ci się nasze produkty? Jesteś zainteresowany współpracą w swoim sklepie? Napisz do nas, a nasz przedstawiciel handlowy skontaktuje się z Tobą w ciągu 24h. Skomponujemy dla Ciebie wyjątkową ofertę, która idealnie sprawdzi się w Twojej firmie. Razem zasmakujmy czegoś wspaniałego!",
+    "ourAdress": "Nasz adres",
+    "orderDepartment": "Dział zamówień"
+  },
+  "productsCategory": {
+    "bestSolution": "NAJLEPSZE ROZWIĄZANIE DLA CIEBIE",
+    "ourTastes": "NASZE SMAKI",
+    "relatedProducts": "Produkty powiązane",
+    "specs": {
+      "batteryCapacity": "Pojemność baterii: ",
+      "liquidCapacity": "Pojemność kapsułki: ",
+      "resistance": "Rezystancja cewki: ",
+      "puffs": "Zaciągnięć: do "
+    },
+    "yupp700": {
+      "title": "Nasza linia Yuppie 700 to bestseller naszej marki  – ile osób, tyle smaków – a Ty, masz już swój ulubiony, w naszej dostępnej gamie 15 smaków?"
+    },
+    "yupp1000v1": {
+      "title": "Sprawdziłeś już Yuppie w nowej odsłonie? – już teraz wybierz swój ulubiony smak i zaspokój swoje zmysły o dowolnej porze dnia."
+    },
+    "yupp1000v2": {
+      "title": "Nowość wśród produktów Yuppie – kompaktowy, ergonomiczny kształt, a w nim aż 1000 zaciągnieś Twoich ulubionych smaków, co oznacza komfort w każdym calu."
+    },
+    "flavors": {
+      "blueberryIce": "Borówka z lodem",
+      "blackcurrant": "Czarna Porzeczka",
+      "mint": "Mięta",
+      "cottonCandy": "Wata Cukrowa",
+      "watermelonIce": "Arbuz z lodem",
+      "blueRazz": "Jeżyna z Jagodą",
+      "mixedBerries": "Mieszane Jagody",
+      "strawberryIce": "Truskawka z lodem",
+      "strawberryIceCream": "Lody Truskawkowe",
+      "strawberryKiwi": "Truskawka Kiwi",
+      "cappuccino": "Cappuccino",
+      "grapeIce": "Winogronowy Lód",
+      "guavaGranadilla": "Gujawa Granadilla",
+      "doubleApple": "Podwójne Jabłko",
+      "mixedOrange": "Mieszana Pomarańcza",
+      "mangoIce": "Mango z lodem",
+      "peachMango": "Brzoskwinia z Mango",
+      "colaIce": "Cola z lodem",
+      "energyDrink": "Energy Drink",
+      "lycheeIce": "Liczi z lodem"
+    }
+  }
+}
