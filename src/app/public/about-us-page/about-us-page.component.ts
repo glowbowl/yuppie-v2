@@ -16,9 +16,9 @@ export class AboutUsPageComponent {
   public arr = [
     './assets/categoryImg/1000v1-gallery/1.png',
     './assets/categoryImg/700-gallery/2.PNG',
-    './assets/categoryImg/1000v1-gallery/3.png',
+    './assets/categoryImg/1000v2-gallery/3.PNG',
     './assets/categoryImg/700-gallery/4.PNG',
-    './assets/categoryImg/700-gallery/5.PNG',
+    './assets/categoryImg/1000v2-gallery/5.PNG',
     './assets/categoryImg/1000v1-gallery/6.png',
   ];
   public some:any;
