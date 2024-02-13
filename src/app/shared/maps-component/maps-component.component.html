@@ -1,31 +1,22 @@
 <section class="flex flex-col items-center w-full">
   <div class="flex flex-col items-center mb-8">
-    <h1 class="font-black text-4xl md:text-5xl mb-4 uppercase">{{ 'location' | translate }}</h1>
+    <h1 class="font-black text-4xl md:text-5xl mb-4 uppercase">
+      {{ "contact" | translate }}
+    </h1>
     <!-- <h2 class="text-xl md:text-2xl font-semibold">Wyspy handlowe Yuppie:</h2> -->
   </div>
 
   <div class="w-full">
-    @if (apiLoaded | async) {
-    <google-map
-      height="550px"
-      width="100%"
-      [center]="center"
-      [zoom]="zoom"
-      [options]="{
-        disableDefaultUI: true,
-      }"
-      (mapClick)="moveMap($event)"
-      (mapMousemove)="move($event)"
-    >
-      <map-marker
-        *ngFor="let marker of markers"
-        [position]="marker.position"
-        [label]="marker.label"
-        [title]="marker.title"
-        [options]="marker.options"
+    <yup-contact-location-block></yup-contact-location-block>
+
+    <div class="flex justify-center mt-10">
+      <button
+        routerLink="/contact"
+        class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded hover:text-gray-200 uppercase bg-black"
+        style="box-shadow: -6px 4px 24px 0px #00000040"
       >
-      </map-marker>
-    </google-map>
-    }
+        {{ "contact" | translate }}
+      </button>
+    </div>
   </div>
 </section>

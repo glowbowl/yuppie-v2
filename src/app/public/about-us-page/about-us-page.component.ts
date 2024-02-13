@@ -14,12 +14,12 @@ import { ContactBlockComponent } from '../../shared/contact-block/contact-block.
 })
 export class AboutUsPageComponent {
   public arr = [
-    './assets/categoryImg/1000v1-gallery/1.JPG',
+    './assets/categoryImg/1000v1-gallery/1.png',
     './assets/categoryImg/700-gallery/2.PNG',
-    './assets/categoryImg/1000v1-gallery/3.JPG',
+    './assets/categoryImg/1000v1-gallery/3.png',
     './assets/categoryImg/700-gallery/4.PNG',
     './assets/categoryImg/700-gallery/5.PNG',
-    './assets/categoryImg/1000v1-gallery/6.JPG',
+    './assets/categoryImg/1000v1-gallery/6.png',
   ];
   public some:any;
   public carouselItems = [

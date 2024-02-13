@@ -46,7 +46,8 @@ export class MainPageComponent {
   ];
   public carouselNavigationItems = [
     {
-      routeUrl: '/cooperation',
+      routeUrl: '/product',
+      routeParameter: '1000v2'
     },
     {
       routeUrl: '/product',
@@ -82,9 +83,9 @@ export class MainPageComponent {
       title: 'Yuppie 700',
       category: '700',
       titleLogo: './assets/img/yup700_logo.png',
-      image: './assets/categoryImg/700/700b.PNG',
-      sideImageOne: './assets/categoryImg/700/700cc.PNG',
-      sideImageTwo: './assets/categoryImg/700/700ed.PNG',
+      image: './assets/categoryImg/700/700b.png',
+      sideImageOne: './assets/categoryImg/700/700cc.png',
+      sideImageTwo: './assets/categoryImg/700/700ed.png',
     },
   ];
 }
