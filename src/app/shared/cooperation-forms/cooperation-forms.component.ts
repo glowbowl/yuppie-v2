@@ -41,18 +41,6 @@ export class CooperationFormsComponent implements OnInit {
   }
 
   public sendEmail() {
-    // Email.send({
-    //   Host : 'serwer2164658.home.pl',
-    //   Username : 'yuppie+yuppie_com_pl.serwer2164658',
-    //   Password : 'Elektroniczny2023',
-    //   To : 'lawvlad317@gmail.com',
-    //   From : `yuppie@yuppie.com.pl`,
-    //   Subject : 'some',
-    //   Body : `
-    //   <i>This is sent as a feedback from my resume page.</i> <br/> <b>Name: </b> <br /> <b>Email: </b><br /> <b>Subject: </b><br /> <b>Message:</b> <br />  <br><br> <b>~End of Message.~</b> `
-    //   }).then( (message: any) => {
-    //     alert(message);
-    //   } );
     if (this.contactForm.invalid) {
       this.contactForm.invalid && this.contactForm.markAllAsTouched();
       return;
@@ -61,11 +49,10 @@ export class CooperationFormsComponent implements OnInit {
     this.loader = true;
     this.emailService
       .sendEmail({
-        'Imię i nazwisko': this.contactForm.value.name,
-        'E-mail': this.contactForm.value.email,
-        'Telefon': this.contactForm.value.number,
-        'Firma': this.contactForm.value.message,
-        _captcha: 'false',
+        'fullName': this.contactForm.value.name,
+        'mail': this.contactForm.value.email,
+        'phone': this.contactForm.value.number,
+        'company': this.contactForm.value.message,
       })
       .pipe(
         take(1),

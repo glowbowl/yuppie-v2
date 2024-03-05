@@ -1,8 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-// @ts-ignore
-import JOS from "jos-animation";
 
 @Component({
   selector: 'yup-text-section',
@@ -12,10 +10,4 @@ import JOS from "jos-animation";
   styleUrl: './text-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TextSectionComponent implements OnInit {
-
-  ngOnInit(): void {
-    // AOS.init();
-    JOS.init();
-  }
-}
+export class TextSectionComponent {}

@@ -14,8 +14,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Observable, catchError, map, of } from 'rxjs';
 import { ContactLocationBlockComponent } from '../contact-location-block/contact-location-block.component';
 import { RouterLink } from '@angular/router';
-// @ts-ignore
-import JOS from "jos-animation";
 
 @Component({
   selector: 'yup-maps-component',
@@ -54,7 +52,6 @@ export class MapsComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    JOS.init();
     // this.addMarker();
   }
 

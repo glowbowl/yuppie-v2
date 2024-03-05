@@ -4,6 +4,7 @@ import {
   ChangeDetectorRef,
   Component,
   OnDestroy,
+  OnInit,
 } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { AllProductCarouselComponent } from '../../shared/all-product-carousel/all-product-carousel.component';
@@ -12,6 +13,8 @@ import { ProductsService } from '../../shared/services/products.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
+// @ts-ignore
+import JOS from "jos-animation";
 
 @Component({
   selector: 'yup-product-page',
@@ -27,7 +30,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './product-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductPageComponent implements OnDestroy {
+export class ProductPageComponent implements OnInit, OnDestroy {
   public carouselProductItems: any = [];
   public productGalery: string[] = [];
   public carouselItems: any = [];
@@ -59,6 +62,10 @@ export class ProductPageComponent implements OnDestroy {
         );
         this.cdr.markForCheck();
       });
+  }
+
+  ngOnInit(): void {
+    JOS.init();
   }
 
   ngOnDestroy() {
