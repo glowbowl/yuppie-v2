@@ -1,4 +1,15 @@
 <yup-main-carousel [items]="carouselItems" [navigateRoute]="carouselNavigationItems"></yup-main-carousel>
+
+<!-- <div class="horizontal-scroll" (scroll)="onScroll($event)">
+  <div class="scroll-container">
+    <div class="image-container" *ngFor="let image of images">
+      <img [src]="image.url" alt="Image" width="150">
+      <div>Yuppie 700</div>
+      <div> - ></div>
+    </div>
+  </div>
+</div> -->
+
 <div class="max-w-screen-xl my-0 mx-auto w-11/12">
   <div class="mt-20 mb-10 md:my-20">
     <yup-product-carousel [items]="carouselProductItems"></yup-product-carousel>
@@ -13,3 +24,20 @@
     <yup-text-section></yup-text-section>
   </div>
 </div>
+
+
+<!-- <section>
+  <div id="parallax" class="parallax-item"
+  style="background: url('./assets/top-home/web/1.png')">
+    <h2>Container 1</h2>
+  </div>
+  <div class="parallax-item">
+    <h2>Container 2</h2>
+  </div>
+  <div id="parallax2" class="parallax-item" style="background: url('./assets/top-home/web/2.png')">
+    <h2>Container 3</h2>
+  </div>
+  <div class="parallax-item">
+    <h2>Container 4</h2>
+  </div>
+</section> -->
