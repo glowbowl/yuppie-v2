@@ -41,65 +41,65 @@ export class CooperationFormsComponent implements OnInit {
   }
 
   public sendEmail() {
-    Email.send({
-      Host : 'smtp.elasticemail.com',
-      Username : 'lawvlad317@gmail.com',
-      Password : 'EACD24ECD0E356C08F5E0178BAFCBCADE903',
-      To : 'lawvlad317@gmail.com',
-      From : `lawvlad317@gmail.com`,
-      Subject : 'some',
-      Body : `
-      <i>This is sent as a feedback from my resume page.</i> <br/> <b>Name: </b> <br /> <b>Email: </b><br /> <b>Subject: </b><br /> <b>Message:</b> <br />  <br><br> <b>~End of Message.~</b> `
-      }).then( (message: any) => {
-        alert(message);
-      } );
-    // if (this.contactForm.invalid) {
-    //   this.contactForm.invalid && this.contactForm.markAllAsTouched();
-    //   return;
-    // }
+    // Email.send({
+    //   Host : 'serwer2164658.home.pl',
+    //   Username : 'yuppie+yuppie_com_pl.serwer2164658',
+    //   Password : 'Elektroniczny2023',
+    //   To : 'lawvlad317@gmail.com',
+    //   From : `yuppie@yuppie.com.pl`,
+    //   Subject : 'some',
+    //   Body : `
+    //   <i>This is sent as a feedback from my resume page.</i> <br/> <b>Name: </b> <br /> <b>Email: </b><br /> <b>Subject: </b><br /> <b>Message:</b> <br />  <br><br> <b>~End of Message.~</b> `
+    //   }).then( (message: any) => {
+    //     alert(message);
+    //   } );
+    if (this.contactForm.invalid) {
+      this.contactForm.invalid && this.contactForm.markAllAsTouched();
+      return;
+    }
 
-    // this.loader = true;
-    // this.emailService
-    //   .sendEmail({
-    //     'Imię i nazwisko': this.contactForm.value.name,
-    //     'E-mail': this.contactForm.value.email,
-    //     'Telefon': this.contactForm.value.number,
-    //     'Firma': this.contactForm.value.message,
-    //     _captcha: 'false',
-    //   })
-    //   .pipe(
-    //     take(1),
-    //     map(value => {
-    //       console.info('Succeed');
-    //       return true;
-    //     }),
-    //     catchError((err: any) => {
-    //       console.log(err.statusText);
-    //       this.loader = false;
-    //       this.cdr.detectChanges();
+    this.loader = true;
+    this.emailService
+      .sendEmail({
+        'Imię i nazwisko': this.contactForm.value.name,
+        'E-mail': this.contactForm.value.email,
+        'Telefon': this.contactForm.value.number,
+        'Firma': this.contactForm.value.message,
+        _captcha: 'false',
+      })
+      .pipe(
+        take(1),
+        map(value => {
+          console.info('Succeed');
+          return true;
+        }),
+        catchError((err: any) => {
+          console.log(err.statusText);
+          this.loader = false;
+          this.cdr.detectChanges();
 
-    //       if (err.statusText === 'OK') {
-    //         this.openSnackBar('Prośba została pomyślnie wysłana', 'OK');
-    //       } else {
-    //         this.openSnackBar('Coś poszło nie tak', 'OK');
-    //       }
-    //       return throwError(err);
-    //     }),
-    //     tap((res: any) => {
-    //       console.log(res.statusText);
-    //       this.loader = false;
-    //       this.cdr.detectChanges();
+          if (err.statusText === 'OK') {
+            this.openSnackBar('Prośba została pomyślnie wysłana', 'OK');
+          } else {
+            this.openSnackBar('Coś poszło nie tak', 'OK');
+          }
+          return throwError(err);
+        }),
+        tap((res: any) => {
+          console.log(res.statusText);
+          this.loader = false;
+          this.cdr.detectChanges();
 
-    //       if (res.statusText === 'OK') {
-    //         this.openSnackBar('Prośba została pomyślnie wysłana', 'OK');
-    //       } else {
-    //         this.openSnackBar('Coś poszło nie tak', 'OK');
-    //       }
-    //     })
-    //   )
-    //   .subscribe((res: any) => {});
+          if (res.statusText === 'OK') {
+            this.openSnackBar('Prośba została pomyślnie wysłana', 'OK');
+          } else {
+            this.openSnackBar('Coś poszło nie tak', 'OK');
+          }
+        })
+      )
+      .subscribe((res: any) => {});
 
-    // this.contactForm.reset();
+    this.contactForm.reset();
   }
 
   private openSnackBar(message: string, action: string) {

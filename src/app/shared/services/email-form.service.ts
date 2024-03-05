@@ -12,11 +12,12 @@ export class EmailFormService {
   constructor(private http: HttpClient) {}
 
   public sendEmail(input: any) {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    });
-    const options = { headers: headers };
-    return this.http.post(this.url, input, options);
+    // const headers = new HttpHeaders({
+    //   'Content-Type': 'application/json',
+    //   'Accept': 'application/json'
+    // });
+    // const options = { headers: headers };
+    // return this.http.post(this.url, input, options);
+    return this.http.get('../assets/php/email.php');
   }
 }
