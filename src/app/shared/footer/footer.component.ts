@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+// @ts-ignore
+import JOS from "jos-animation";
 
 @Component({
   selector: 'yup-footer',
@@ -10,6 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterComponent {
-
+export class FooterComponent implements OnInit {
+  ngOnInit(): void {
+    JOS.init();
+  }
 }

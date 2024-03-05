@@ -7,23 +7,43 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 $mail = new PHPMailer(true);
 
+$ini_smtp = parse_ini_file("storage.ini");
+
+if (empty($ini_smtp['host'])) {
+    echo "Error with SMTP connection!";
+    exit(1);
+}
+$host = $ini_smtp['host'];
+$username = $ini_smtp['username'];
+$password = $ini_smtp['password'];
+$port = $ini_smtp['port'];
+
+if(isset($_POST['fullName']) && isset($_POST['mail']) && isset($_POST['phone']))
+{
+    $postName = $_POST['fullName'];
+    $postPhone = $_POST['phone'];
+    $postCompany = $_POST['company'];
+    $postEmail = $_POST['mail'];
+    $order = $postName . ', ' . $postPhone . ', ' . $postCompany . ', ' . $postEmail;
+}
+
 try {
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
+    $mail->Host       = $host;
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'lawvlad317@gmail.com';
-    $mail->Password   = 'pqnhbufszuatooyn';
+    $mail->Username   = $username;
+    $mail->Password   = $password;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->Port       = 465;
+    $mail->Port       = $port;
 
     //Recipients
-    $mail->setFrom('lawvlad317@gmail.com', 'Mailer');
-    $mail->addAddress('marengarin@gmail.com');
+    $mail->setFrom('yuppie@yuppie.com.pl', 'Yuppie Contact Form');
+    $mail->addAddress('yuppie@yuppie.com.pl');
 
     //Content
     $mail->isHTML(true);
     $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Body    = $order;
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

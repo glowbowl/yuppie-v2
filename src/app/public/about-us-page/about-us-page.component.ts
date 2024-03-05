@@ -1,8 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { GalleryGridComponent } from '../../shared/gallery-grid/gallery-grid.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ContactBlockComponent } from '../../shared/contact-block/contact-block.component';
+// @ts-ignore
+import JOS from "jos-animation";
 
 @Component({
   selector: 'yup-about-us-page',
@@ -12,7 +14,7 @@ import { ContactBlockComponent } from '../../shared/contact-block/contact-block.
   styleUrl: './about-us-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutUsPageComponent {
+export class AboutUsPageComponent implements OnInit {
   public arr = [
     './assets/categoryImg/1000v1-gallery/1.png',
     './assets/categoryImg/700-gallery/2.PNG',
@@ -36,4 +38,8 @@ export class AboutUsPageComponent {
       routeUrl: '/cooperation'
     },
   ]
+
+  ngOnInit(): void {
+    JOS.init();
+  }
 }

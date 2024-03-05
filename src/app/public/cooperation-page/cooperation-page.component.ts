@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { CooperationFormsComponent } from '../../shared/cooperation-forms/cooperation-forms.component';
 import { HttpClientModule } from '@angular/common/http';
+// @ts-ignore
+import JOS from "jos-animation";
 
 @Component({
   selector: 'yup-cooperation-page',
@@ -13,7 +15,11 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './cooperation-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CooperationPageComponent {
+export class CooperationPageComponent implements OnInit {
+
+  ngOnInit(): void {
+    JOS.init();
+  }
   public carouselItems = [
     {
       title: 'Współpraca Yuppie',

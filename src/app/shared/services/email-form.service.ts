@@ -18,6 +18,6 @@ export class EmailFormService {
     // });
     // const options = { headers: headers };
     // return this.http.post(this.url, input, options);
-    return this.http.get('../assets/php/email.php');
+    return this.http.post('../assets/php/email.php', input);
   }
 }

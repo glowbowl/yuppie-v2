@@ -4,6 +4,8 @@ import { MapsComponentComponent } from '../../shared/maps-component/maps-compone
 import { ProductCarouselComponent } from '../../shared/product-carousel/product-carousel.component';
 import { TextSectionComponent } from '../../shared/text-section/text-section.component';
 import { CommonModule } from '@angular/common';
+// @ts-ignore
+import JOS from "jos-animation";
 
 @Component({
   selector: 'yup-main-page',
@@ -73,6 +75,7 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    JOS.init();
     // const parallax = document.getElementById("parallax");
     // const parallax2 = document.getElementById("parallax2");
 

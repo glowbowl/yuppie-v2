@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { MapsComponentComponent } from '../../shared/maps-component/maps-component.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ContactLocationBlockComponent } from '../../shared/contact-location-block/contact-location-block.component';
 import { RouterLink } from '@angular/router';
+// @ts-ignore
+import JOS from "jos-animation";
 
 @Component({
   selector: 'yup-location-page',
@@ -21,7 +23,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './location-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LocationPageComponent {
+export class LocationPageComponent implements OnInit {
+  ngOnInit(): void {
+    JOS.init();
+  }
   public carouselItems = [
     {
       title: 'Lokalizacja Yuppie',
