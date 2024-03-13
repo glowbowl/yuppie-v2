@@ -62,30 +62,48 @@ export class MainPageComponent implements OnInit {
     },
   ];
 
-  // @HostListener('window:scroll', ['$event'])
-  // onScroll(event: Event) {
-  //   const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-  //   // Adjust scroll speed as needed
-  //   const scrollSpeed = 1;
-  //   const scrollContainer = document.querySelector('.scroll-container') as HTMLElement;
-  //   scrollContainer.style.transform = `translateX(${scrollOffset * scrollSpeed}px)`;
-  // }
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    // Adjust scroll speed as needed
+    const scrollSpeed = 1;
+    const scrollContainer = document.querySelector('.scroll-container') as HTMLElement;
+    scrollContainer.style.transform = `translateX(${scrollOffset * scrollSpeed}px)`;
+  }
 
   constructor() {
   }
 
   ngOnInit(): void {
     JOS.init();
-    // const parallax = document.getElementById("parallax");
-    // const parallax2 = document.getElementById("parallax2");
+    const parallax1 = document.getElementById("parallaxContainer1");
+    // const img1 = document.getElementById("img1");
+    const bgParallax1 = document.getElementById("bgParallax1");
+    const parallax2 = document.getElementById("parallaxContainer2");
+    // const img1 = document.getElementById("img1");
+    const bgParallax2 = document.getElementById("bgParallax2");
 
-    // // Parallax Effect for DIV 1
-    // window.addEventListener("scroll", function () {
-    //   let offset = window.pageYOffset;
-    //   parallax!.style.backgroundPositionY = offset * 0.7 + "px";
-    //   parallax2!.style.backgroundPositionY = offset * 0.7 + "px";
-    //   // DIV 1 background will move slower than other elements on scroll.
-    // });
+    // Parallax Effect for DIV 1
+    window.addEventListener("scroll", function () {
+      let offset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+      const movementBG1 = -((parallax1!.offsetTop - offset) * 0.4);
+      const movement1 = -((parallax1!.offsetTop - offset) * 0.2);
+
+      const movementBG2 = -((parallax2!.offsetTop - offset) * 0.4);
+      const movement2 = -((parallax2!.offsetTop - offset) * 0.2);
+
+      // img1!.style.transform = 'translate3d(0, ' + movement1 + 'px, 0)';
+      bgParallax1!.style.transform = 'translate3d(0, ' + movementBG1 + 'px, 0)';
+
+      // img2!.style.transform = 'translate3d(0, ' + movement1 + 'px, 0)';
+      bgParallax2!.style.transform = 'translate3d(0, ' + movementBG2 + 'px, 0)';
+
+      // parallax!.style.backgroundPositionY = offset * 0.01 + "px";
+      // parallaxcx!.style.backgroundPositionY = offset * 0.11 + "px";
+      // parallax2!.style.backgroundPositionY = offset * 0.7 + "px";
+      // DIV 1 background will move slower than other elements on scroll.
+    });
   }
 
   public carouselItems = [
