@@ -25,85 +25,139 @@ export class MainPageComponent implements OnInit {
 
   images = [
     {
-      url: './assets/img/yup1000v2_logo.png',
+      label: 'Yuppie 700',
     },
     {
-      url: './assets/img/yup1000v1_logo.png',
+      label: 'Yuppie 1000 V1',
     },
     {
-      url: './assets/img/yup700_logo.png',
+      label: 'Yuppie 1000 V2',
     },
     {
-      url: './assets/img/yup1000v2_logo.png',
+      label: 'Yuppie 700',
     },
     {
-      url: './assets/img/yup1000v1_logo.png',
+      label: 'Yuppie 1000 V1',
     },
     {
-      url: './assets/img/yup700_logo.png',
+      label: 'Yuppie 1000 V2',
     },
     {
-      url: './assets/img/yup1000v2_logo.png',
+      label: 'Yuppie 700',
     },
     {
-      url: './assets/img/yup1000v1_logo.png',
+      label: 'Yuppie 1000 V1',
     },
     {
-      url: './assets/img/yup700_logo.png',
+      label: 'Yuppie 1000 V2',
     },
     {
-      url: './assets/img/yup1000v2_logo.png',
+      label: 'Yuppie 700',
     },
     {
-      url: './assets/img/yup1000v1_logo.png',
+      label: 'Yuppie 1000 V1',
     },
     {
-      url: './assets/img/yup700_logo.png',
+      label: 'Yuppie 1000 V2',
+    },
+    {
+      label: 'Yuppie 700',
+    },
+    {
+      label: 'Yuppie 1000 V1',
+    },
+    {
+      label: 'Yuppie 1000 V2',
     },
   ];
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    // Adjust scroll speed as needed
-    const scrollSpeed = 1;
-    const scrollContainer = document.querySelector('.scroll-container') as HTMLElement;
-    scrollContainer.style.transform = `translateX(${scrollOffset * scrollSpeed}px)`;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          const scrollSpeed = 0.5;
+          const scrollContainer = document.querySelector('.scroll-container') as HTMLElement;
+          const item = document.getElementById('horizontal-scroll')
+          scrollContainer.style.transform = `translateX(${(item!.offsetTop - scrollOffset) * scrollSpeed}px)`;
+
+        } else {
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.65 });
+
+    const observerParallax1 = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          const movementBG1 = -((this.parallax1!.offsetTop - scrollOffset) * 0.4);
+          const movement1 = -((this.parallax1!.offsetTop - scrollOffset) * 0.17);
+          const scale = (0.85 + (scrollOffset * 0.00015));
+
+          let rotate1 = -25;
+          Array.from(this.imgs1).forEach((item: any) => {
+            item!.style.setProperty('transform',`translate3d(0, ${movement1}px, 0) rotate(${rotate1}deg) scale(${scale})`);
+            rotate1 = rotate1 + 15;
+          });
+          this.bgParallax1!.style.transform = 'translate3d(0, ' + movementBG1 + 'px, 0)';
+
+        } else {
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    const observerParallax2 = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          const movementBG2 = -((this.parallax2!.offsetTop - scrollOffset) * 0.4);
+          const movement2 = -((this.parallax2!.offsetTop - scrollOffset) * 0.2);
+          const scale = (0.85 + (scrollOffset * 0.00015));
+
+          let rotate1 = -25;
+          Array.from(this.imgs2).forEach((item: any) => {
+            item!.style.setProperty('transform',`translate3d(0, ${movement2}px, 0) rotate(${rotate1}deg) scale(${scale})`);
+            rotate1 = rotate1 + 15;
+          });
+
+          this.bgParallax2!.style.transform = 'translate3d(0, ' + movementBG2 + 'px, 0)';
+
+        } else {
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(document.querySelector('.horizontal-scroll')!);
+    observerParallax1.observe(document.getElementById('parallaxContainer1')!);
+    observerParallax2.observe(document.getElementById('parallaxContainer2')!);
   }
 
-  constructor() {
-  }
+  parallax1:any;
+  bgParallax1:any;
+  imgs1:any;
+  imgs2:any;
+  parallax2:any;
+  bgParallax2:any;
+
+  constructor() {}
 
   ngOnInit(): void {
     JOS.init();
-    const parallax1 = document.getElementById("parallaxContainer1");
-    // const img1 = document.getElementById("img1");
-    const bgParallax1 = document.getElementById("bgParallax1");
-    const parallax2 = document.getElementById("parallaxContainer2");
-    // const img1 = document.getElementById("img1");
-    const bgParallax2 = document.getElementById("bgParallax2");
+    this.parallax1 = document.getElementById("parallaxContainer1");
+    this.bgParallax1 = document.getElementById("bgParallax1");
 
-    // Parallax Effect for DIV 1
-    window.addEventListener("scroll", function () {
-      let offset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.imgs1 = document.getElementsByClassName('image-product1');
+    this.imgs2 = document.getElementsByClassName('image-product2');
 
-      const movementBG1 = -((parallax1!.offsetTop - offset) * 0.4);
-      const movement1 = -((parallax1!.offsetTop - offset) * 0.2);
-
-      const movementBG2 = -((parallax2!.offsetTop - offset) * 0.4);
-      const movement2 = -((parallax2!.offsetTop - offset) * 0.2);
-
-      // img1!.style.transform = 'translate3d(0, ' + movement1 + 'px, 0)';
-      bgParallax1!.style.transform = 'translate3d(0, ' + movementBG1 + 'px, 0)';
-
-      // img2!.style.transform = 'translate3d(0, ' + movement1 + 'px, 0)';
-      bgParallax2!.style.transform = 'translate3d(0, ' + movementBG2 + 'px, 0)';
-
-      // parallax!.style.backgroundPositionY = offset * 0.01 + "px";
-      // parallaxcx!.style.backgroundPositionY = offset * 0.11 + "px";
-      // parallax2!.style.backgroundPositionY = offset * 0.7 + "px";
-      // DIV 1 background will move slower than other elements on scroll.
-    });
+    this.parallax2 = document.getElementById("parallaxContainer2");
+    this.bgParallax2 = document.getElementById("bgParallax2");
   }
 
   public carouselItems = [
@@ -116,7 +170,7 @@ export class MainPageComponent implements OnInit {
     {
       title: 'Two',
       color: 'lightgray',
-      image: './assets/top-home/web/2.png',    // Add more image objects as needed
+      image: './assets/top-home/web/2.png',
       mobileImage: './assets/top-home/mobile/2.png',
     },
     {
