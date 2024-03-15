@@ -1,11 +1,11 @@
-<yup-main-carousel [items]="carouselItems" [navigateRoute]="carouselNavigationItems"></yup-main-carousel>
+<yup-main-carousel [items]="carouselItems" [navigateRoute]="carouselNavigationItems" (currentProductSlide)="setCurrentSlideProd($event)"></yup-main-carousel>
 
 <div class="relative" style="top: -5px;">
   <div id="horizontal-scroll" class="horizontal-scroll" (scroll)="onScroll($event)">
     <div class="scroll-container">
       <div class="image-container" *ngFor="let image of images">
         <!-- <img [src]="image.url" alt="Image" width="150"> -->
-        <div>{{ image.label }}</div>
+        <div>{{ image.title | translate }}</div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50">
             <polygon points="80,50 30,20 30,80" fill="white"/>
@@ -31,7 +31,7 @@
 <div id="parallaxContainer1" class="parallax-container">
   <div id="bgParallax1" class="parallax-image" style="background-image: url('./assets/img/parallax/an1.png');"></div>
   <div class="separator-block">
-    <svg class="separator-waves-top" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <svg style="fill: white;" class="separator-waves-top" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
       <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
       <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
@@ -40,39 +40,14 @@
   <div class="img-container">
     <img id="img1" src="./assets/categoryImg/1000v2/v2bi.png" alt="Product item" class="image-product1" style="top: 15px;left: 15px;">
     <img id="img1" src="./assets/categoryImg/1000v2/v2br.png" alt="Product item" class="image-product1" style="bottom: 20px;left: 10px;">
-    <img id="img1" src="./assets/categoryImg/1000v2/v2da.png" alt="Product item" class="image-product1" style="bottom: 20px;right: 10px;">
+    <img id="img1" *ngIf="imageDesktop" src="./assets/categoryImg/1000v2/v2da.png" alt="Product item" class="image-product1" style="bottom: 20px;right: 10px;">
     <img id="img1" src="./assets/categoryImg/1000v2/v2cc.png" alt="Product item" class="image-product1" style="top: 15px;right: 15px;">
   </div>
   <div class="separator-block" style="top:1px">
-    <svg style="transform:rotate(180deg)" class="separator-waves-bottom" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path style="fill: white;" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-      <path style="fill: white;" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-      <path style="fill: white;" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-  </svg>
-  </div>
-</div>
-
-<div>
-  <yup-maps-component></yup-maps-component>
-</div>
-
-<div id="parallaxContainer2" class="parallax-container">
-  <div id="bgParallax2" class="parallax-image" style="background-image: url('./assets/img/parallax/an2.png');"></div>
-  <div class="separator-block">
-    <svg class="separator-waves-top" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path style="fill: white;" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-      <path style="fill: white;" d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-      <path style="fill: white;" d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-  </svg>
-  </div>
-  <div class="img-container" style="gap: 8%;">
-    <img id="img1" src="./assets/categoryImg/1000v1/ybiv1.png" alt="Product item" class="image-product2" style="top: 40px;">
-    <img id="img1" src="./assets/categoryImg/1000v1/ybrv1.png" alt="Product item" class="image-product2" style="">
-    <img id="img1" src="./assets/categoryImg/1000v1/ydav1.png" alt="Product item" class="image-product2" style="">
-    <img id="img1" src="./assets/categoryImg/1000v1/yggv1.png" alt="Product item" class="image-product2" style="top: 40px;">
-  </div>
-  <div class="separator-block" style="top:1px">
-    <svg style="transform:rotate(180deg)" class="separator-waves-bottom" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <svg style="transform:rotate(180deg); fill: white;" class="separator-waves-bottom" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <!-- <path style="fill: white;opacity:0.2" d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+      <path style="fill: white;opacity:0.5" d="M0 0L1200 0 307.75 114.72 0 0z" class="shape-fill"></path>
+      <path style="fill: white" d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path> -->
       <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
       <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
       <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
@@ -80,12 +55,32 @@
   </div>
 </div>
 
-<div class="separator-block-last">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-    <path class="elementor-shape-fill" opacity="0.33" d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"></path>
-    <path class="elementor-shape-fill" opacity="0.66" d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z"></path>
-    <path class="elementor-shape-fill" d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z"></path>
+<div class="overflow-hidden">
+  <yup-maps-component></yup-maps-component>
+</div>
+
+<div id="parallaxContainer2" class="parallax-container">
+  <div id="bgParallax2" class="parallax-image" style="background-image: url('./assets/img/parallax/an2.png');"></div>
+  <div class="separator-block">
+    <svg style="fill: white;" class="separator-waves-top" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
   </svg>
+  </div>
+  <div class="img-container" style="gap: 10%;">
+    <img id="img1" src="./assets/categoryImg/1000v1/ybiv1.png" alt="Product item" class="image-product2" style="top: 70px;">
+    <img id="img1" src="./assets/categoryImg/1000v1/ybrv1.png" alt="Product item" class="image-product2" style="">
+    <img id="img1" src="./assets/categoryImg/1000v1/ydav1.png" alt="Product item" class="image-product2" style="">
+    <img id="img1" src="./assets/categoryImg/1000v1/yggv1.png" alt="Product item" class="image-product2" style="top: 70px;">
+  </div>
+  <div class="separator-block" style="top:1px">
+    <svg style="transform:rotate(180deg); fill: white;" class="separator-waves-bottom" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+  </svg>
+  </div>
 </div>
 
 <div class="max-w-screen-xl my-0 mx-auto w-11/12">

@@ -20,24 +20,6 @@
   background-position: center;
 }
 
-.separator-block {
-  height: auto;
-  min-height: 120px;
-  position: relative;
-  top: 1px;
-}
-
-.separator-waves {
-  height: 115px;
-  width: 100%;
-}
-
-@media (max-width: 768px) {
-  .separator-waves {
-    width: 245%;
-  }
-}
-
 @keyframes Loader {
   0%   { background-position: 100% 0; }
   100% { background-position: 0 0; }

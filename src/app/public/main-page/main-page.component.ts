@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { MapsComponentComponent } from '../../shared/maps-component/maps-component.component';
 import { ProductCarouselComponent } from '../../shared/product-carousel/product-carousel.component';
@@ -6,6 +6,8 @@ import { TextSectionComponent } from '../../shared/text-section/text-section.com
 import { CommonModule } from '@angular/common';
 // @ts-ignore
 import JOS from "jos-animation";
+import { ProductsService } from '../../shared/services/products.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'yup-main-page',
@@ -16,64 +18,69 @@ import JOS from "jos-animation";
     ProductCarouselComponent,
     TextSectionComponent,
     CommonModule,
+    TranslateModule,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainPageComponent implements OnInit {
-
-  images = [
+export class MainPageComponent implements OnInit, OnDestroy {
+  images: any = [
     {
-      label: 'Yuppie 700',
+      title: 'Yuppie 700',
     },
     {
-      label: 'Yuppie 1000 V1',
+      title: 'Yuppie 1000 V1',
     },
     {
-      label: 'Yuppie 1000 V2',
+      title: 'Yuppie 1000 V2',
     },
     {
-      label: 'Yuppie 700',
+      title: 'Yuppie 700',
     },
     {
-      label: 'Yuppie 1000 V1',
+      title: 'Yuppie 1000 V1',
     },
     {
-      label: 'Yuppie 1000 V2',
+      title: 'Yuppie 1000 V2',
     },
     {
-      label: 'Yuppie 700',
+      title: 'Yuppie 700',
     },
     {
-      label: 'Yuppie 1000 V1',
+      title: 'Yuppie 1000 V1',
     },
     {
-      label: 'Yuppie 1000 V2',
+      title: 'Yuppie 1000 V2',
     },
     {
-      label: 'Yuppie 700',
+      title: 'Yuppie 700',
     },
     {
-      label: 'Yuppie 1000 V1',
+      title: 'Yuppie 1000 V1',
     },
     {
-      label: 'Yuppie 1000 V2',
+      title: 'Yuppie 1000 V2',
     },
     {
-      label: 'Yuppie 700',
+      title: 'Yuppie 700',
     },
     {
-      label: 'Yuppie 1000 V1',
+      title: 'Yuppie 1000 V1',
     },
     {
-      label: 'Yuppie 1000 V2',
+      title: 'Yuppie 1000 V2',
     },
   ];
 
+  observer: any;
+  observerParallax1: any;
+  observerParallax2: any;
+  slideProduct = 'all';
+
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    const observer = new IntersectionObserver((entries) => {
+    this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
 
         if (entry.isIntersecting) {
@@ -83,35 +90,40 @@ export class MainPageComponent implements OnInit {
           const item = document.getElementById('horizontal-scroll')
           scrollContainer.style.transform = `translateX(${(item!.offsetTop - scrollOffset) * scrollSpeed}px)`;
 
-        } else {
-          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.65 });
 
-    const observerParallax1 = new IntersectionObserver((entries) => {
+    this.observerParallax1 = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
 
         if (entry.isIntersecting) {
           const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
           const movementBG1 = -((this.parallax1!.offsetTop - scrollOffset) * 0.4);
-          const movement1 = -((this.parallax1!.offsetTop - scrollOffset) * 0.17);
+          const movement1 = -((this.parallax1!.offsetTop - scrollOffset) * 0.1);
           const scale = (0.85 + (scrollOffset * 0.00015));
 
-          let rotate1 = -25;
+          let rotate1: number;
+
+          if (this.imageDesktop) {
+            rotate1 = -25;
+          } else {
+            rotate1 = -15;
+          }
+
           Array.from(this.imgs1).forEach((item: any) => {
-            item!.style.setProperty('transform',`translate3d(0, ${movement1}px, 0) rotate(${rotate1}deg) scale(${scale})`);
+            item!.style.setProperty('transform', `translate3d(0, ${movement1}px, 0) rotate(${rotate1}deg) scale(${scale})`);
             rotate1 = rotate1 + 15;
           });
           this.bgParallax1!.style.transform = 'translate3d(0, ' + movementBG1 + 'px, 0)';
 
-        } else {
-          observer.unobserve(entry.target);
         }
       });
+    }, {
+      rootMargin: '100px 0px 100px 0px'
     });
 
-    const observerParallax2 = new IntersectionObserver((entries) => {
+    this.observerParallax2 = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
 
         if (entry.isIntersecting) {
@@ -122,31 +134,40 @@ export class MainPageComponent implements OnInit {
 
           let rotate1 = -25;
           Array.from(this.imgs2).forEach((item: any) => {
-            item!.style.setProperty('transform',`translate3d(0, ${movement2}px, 0) rotate(${rotate1}deg) scale(${scale})`);
+            item!.style.setProperty('transform', `translate3d(0, ${movement2}px, 0) rotate(${rotate1}deg) scale(${scale})`);
             rotate1 = rotate1 + 15;
           });
 
           this.bgParallax2!.style.transform = 'translate3d(0, ' + movementBG2 + 'px, 0)';
 
-        } else {
-          observer.unobserve(entry.target);
         }
       });
+    }, {
+      rootMargin: '100px 0px 100px 0px'
     });
 
-    observer.observe(document.querySelector('.horizontal-scroll')!);
-    observerParallax1.observe(document.getElementById('parallaxContainer1')!);
-    observerParallax2.observe(document.getElementById('parallaxContainer2')!);
+    this.observer.observe(document.querySelector('.horizontal-scroll')!);
+    this.observerParallax1.observe(document.getElementById('parallaxContainer1')!);
+    this.observerParallax2.observe(document.getElementById('parallaxContainer2')!);
   }
 
-  parallax1:any;
-  bgParallax1:any;
-  imgs1:any;
-  imgs2:any;
-  parallax2:any;
-  bgParallax2:any;
+  parallax1: any;
+  bgParallax1: any;
+  imgs1: any;
+  imgs2: any;
+  parallax2: any;
+  bgParallax2: any;
+  imageDesktop = true;
 
-  constructor() {}
+  constructor(
+    private productService: ProductsService,
+  ) { }
+
+  ngOnDestroy(): void {
+    this.observer.unobserve(document.querySelector('.horizontal-scroll')!);
+    this.observerParallax1.unobserve(document.getElementById('parallaxContainer1')!);
+    this.observerParallax2.unobserve(document.getElementById('parallaxContainer2')!);
+  }
 
   ngOnInit(): void {
     JOS.init();
@@ -158,6 +179,17 @@ export class MainPageComponent implements OnInit {
 
     this.parallax2 = document.getElementById("parallaxContainer2");
     this.bgParallax2 = document.getElementById("bgParallax2");
+
+    const device = navigator.userAgent;
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(device)) {
+      this.imageDesktop = false;
+    } else {
+      this.imageDesktop = true;
+    }
+  }
+
+  public setCurrentSlideProd(slideProduct: string): void {
+    this.images = this.productService.getProductsByCategory(slideProduct);
   }
 
   public carouselItems = [

@@ -1,5 +1,5 @@
 .parallax-container {
-  height: 750px;
+  height: 900px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -27,13 +27,15 @@
   .img-container {
     display: flex;
     justify-content: center;
-    height: 50%;
+    height: 45%;
 
     .image-product1 {
       height: 90%;
       width: fit-content;
       position: relative;
       z-index: -2;
+      filter: drop-shadow(0 0 10px rgba(222, 255, 255, 0.8));
+      transition: filter 0.5s ease-in-out;
     }
 
     .image-product2 {
@@ -41,6 +43,8 @@
       width: fit-content;
       position: relative;
       z-index: -2;
+      filter: drop-shadow(0 0 10px rgba(222, 255, 255, 0.8));
+      transition: filter 0.5s ease-in-out;
     }
   }
 }
@@ -116,6 +120,10 @@
 
     .parallax-image {
       height: 850px;
+    }
+
+    .img-container {
+      height: 40%;
     }
   }
 
