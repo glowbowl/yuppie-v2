@@ -1,4 +1,4 @@
-<section class="flex flex-col items-center">
+<section class="flex flex-col items-center max-w-screen-xl my-0 mx-auto w-11/12">
   <div
     class="flex flex-col items-center mb-8 jos"
     data-jos_animation="fade-up"
@@ -19,7 +19,7 @@
     />
   </div>
   <div
-    class="w-full md:w-3/5 flex items-center justify-center gap-10 mb-16 jos"
+    class="w-full md:w-3/5 flex items-center justify-center gap-10 mb-0 md:mb-16 jos"
     data-jos_animation="fade-up"
     data-jos_rootMargin_bottom="15%"
     data-jos_scrolldirection="down"
@@ -138,8 +138,15 @@
       </svg>
     </div>
   </div>
-  <div
-    class="flex jos"
+</section>
+
+<div
+  class="flex justify-center pb-10 pt-10 md:pb-32 md:pt-16"
+>
+  <button
+    [routerLink]="['/product', items[currentIndex].category]"
+    class="jos text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded hover:text-gray-200 uppercase bg-black"
+    style="box-shadow: -6px 4px 24px 0px #ffffff40"
     data-jos_animation="fade-up"
     data-jos_rootMargin_bottom="15%"
     data-jos_scrolldirection="down"
@@ -148,12 +155,6 @@
     data-jos_timingfunction="ease"
     data-jos_duration="0.4"
   >
-    <button
-      [routerLink]="['/product', items[currentIndex].category]"
-      class="text-xl md:text-2xl font-semibold py-3 px-6 text-white rounded hover:text-gray-200 uppercase bg-black"
-      style="box-shadow: -6px 4px 24px 0px #00000040"
-    >
-      {{ "seeMore" | translate }}
-    </button>
-  </div>
-</section>
+    {{ "seeMore" | translate }}
+  </button>
+</div>

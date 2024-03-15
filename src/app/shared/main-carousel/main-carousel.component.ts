@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -22,6 +22,7 @@ export class MainCarouselComponent implements OnInit, AfterViewInit {
       routeParameter: '1000v1'
     }
   ]
+  @Output() currentProductSlide = new EventEmitter<any>();
   @ViewChild('progress') progress!: ElementRef<any>;
   public currentIndex = 0;
   public showProgressBar = true;
@@ -60,6 +61,7 @@ export class MainCarouselComponent implements OnInit, AfterViewInit {
 
   public nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.items.length;
+    this.currentProductSlide.emit(this.navigateRoute[this.currentIndex]?.routeParameter);
     this.cdr.markForCheck();
   }
 
