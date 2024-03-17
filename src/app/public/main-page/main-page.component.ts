@@ -164,9 +164,9 @@ export class MainPageComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnDestroy(): void {
-    this.observer.unobserve(document.querySelector('.horizontal-scroll')!);
-    this.observerParallax1.unobserve(document.getElementById('parallaxContainer1')!);
-    this.observerParallax2.unobserve(document.getElementById('parallaxContainer2')!);
+    // this.observer.unobserve(document.querySelector('.horizontal-scroll')!);
+    // this.observerParallax1.unobserve(document.getElementById('parallaxContainer1')!);
+    // this.observerParallax2.unobserve(document.getElementById('parallaxContainer2')!);
   }
 
   ngOnInit(): void {
