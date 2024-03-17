@@ -25,7 +25,7 @@ bootstrapApplication(AppComponent, appConfig)
   }
 
   async function setFade(): Promise<void> {
-    const initialDate: Date = new Date('2024-03-16');
+    const initialDate: Date = new Date('2024-03-18');
     const daysDeadline: number = 15;
     const dayMilliseconds: number = (1000 * 60 * 60 * 24);
     let currentDate: Date = new Date();
