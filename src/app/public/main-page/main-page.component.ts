@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import JOS from "jos-animation";
 import { ProductsService } from '../../shared/services/products.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'yup-main-page',
@@ -19,81 +20,37 @@ import { TranslateModule } from '@ngx-translate/core';
     TextSectionComponent,
     CommonModule,
     TranslateModule,
+    RouterLink,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainPageComponent implements OnInit, OnDestroy {
-  images: any = [
+  public subCarouselItems: any = [
     {
       title: 'Yuppie 700',
+      routeUrl: '/product',
+      routeParameter: '700',
     },
     {
       title: 'Yuppie 1000 V1',
+      routeUrl: '/product',
+      routeParameter: '1000v1',
     },
     {
       title: 'Yuppie 1000 V2',
-    },
-    {
-      title: 'Yuppie 700',
-    },
-    {
-      title: 'Yuppie 1000 V1',
-    },
-    {
-      title: 'Yuppie 1000 V2',
-    },
-    {
-      title: 'Yuppie 700',
-    },
-    {
-      title: 'Yuppie 1000 V1',
-    },
-    {
-      title: 'Yuppie 1000 V2',
-    },
-    {
-      title: 'Yuppie 700',
-    },
-    {
-      title: 'Yuppie 1000 V1',
-    },
-    {
-      title: 'Yuppie 1000 V2',
-    },
-    {
-      title: 'Yuppie 700',
-    },
-    {
-      title: 'Yuppie 1000 V1',
-    },
-    {
-      title: 'Yuppie 1000 V2',
+      routeUrl: '/product',
+      routeParameter: '1000v2',
     },
   ];
 
-  observer: any;
   observerParallax1: any;
   observerParallax2: any;
   slideProduct = 'all';
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: Event) {
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-          const scrollOffset = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-          const scrollSpeed = 0.5;
-          const scrollContainer = document.querySelector('.scroll-container') as HTMLElement;
-          const item = document.getElementById('horizontal-scroll')
-          scrollContainer.style.transform = `translateX(${(item!.offsetTop - scrollOffset) * scrollSpeed}px)`;
-
-        }
-      });
-    }, { threshold: 0.65 });
-
     this.observerParallax1 = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
 
@@ -146,7 +103,6 @@ export class MainPageComponent implements OnInit, OnDestroy {
       rootMargin: '100px 0px 100px 0px'
     });
 
-    this.observer.observe(document.querySelector('.horizontal-scroll')!);
     this.observerParallax1.observe(document.getElementById('parallaxContainer1')!);
     this.observerParallax2.observe(document.getElementById('parallaxContainer2')!);
   }
@@ -157,16 +113,24 @@ export class MainPageComponent implements OnInit, OnDestroy {
   imgs2: any;
   parallax2: any;
   bgParallax2: any;
+  horizontalScrollEl: any;
   imageDesktop = true;
+  defaultSlideLineRoute = true;
 
   constructor(
     private productService: ProductsService,
-  ) { }
+  ) {}
 
   ngOnDestroy(): void {
-    this.observer.unobserve(document.querySelector('.horizontal-scroll')!);
-    this.observerParallax1.unobserve(document.getElementById('parallaxContainer1')!);
-    this.observerParallax2.unobserve(document.getElementById('parallaxContainer2')!);
+    if (this.observerParallax1) {
+      this.observerParallax1.disconnect();
+    }
+    if (this.observerParallax2) {
+      this.observerParallax2.disconnect();
+    }
+    if (this.horizontalScrollEl) {
+      this.horizontalScrollEl.removeEventListener('wheel', this.handleWheelEvent);
+    }
   }
 
   ngOnInit(): void {
@@ -186,10 +150,54 @@ export class MainPageComponent implements OnInit, OnDestroy {
     } else {
       this.imageDesktop = true;
     }
+
+    if (this.imageDesktop) {
+      this.horizontalScrollEl = document.getElementById("horizontal-scroll");
+      if (this.horizontalScrollEl) {
+        this.horizontalScrollEl.addEventListener('wheel', this.handleWheelEvent);
+      }
+    }
   }
 
-  public setCurrentSlideProd(slideProduct: string): void {
-    this.images = this.productService.getProductsByCategory(slideProduct);
+  private handleWheelEvent = (event: any) => {
+    event.preventDefault();
+    if (this.horizontalScrollEl) {
+      this.horizontalScrollEl.scrollBy({
+        left: event.deltaY < 0 ? -30 : 30,
+      });
+    }
+  };
+
+  public setCurrentSlideProd(slideProduct: any): void {
+    if (!slideProduct.index) {
+      this.defaultSlideLineRoute = true;
+      this.subCarouselItems = [
+        {
+          title: 'Yuppie 700',
+          routeUrl: '/product',
+          routeParameter: '700',
+        },
+        {
+          title: 'Yuppie 1000 V1',
+          routeUrl: '/product',
+          routeParameter: '1000v1',
+        },
+        {
+          title: 'Yuppie 1000 V2',
+          routeUrl: '/product',
+          routeParameter: '1000v2',
+        },
+      ];
+    } else {
+      this.defaultSlideLineRoute = false;
+
+      this.subCarouselItems = this.productService.getProductsByCategory(slideProduct.productCategory);
+      this.subCarouselItems.forEach((item: any) => {
+        item['routeUrl'] = '/item';
+        item['productCategory'] = slideProduct.productCategory;
+        return item;
+      });
+    }
   }
 
   public carouselItems = [

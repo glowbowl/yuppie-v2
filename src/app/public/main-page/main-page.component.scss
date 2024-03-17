@@ -52,86 +52,85 @@
   min-height: 100px;
   position: relative;
   top: -1px;
-}
 
-.separator-block-last {
-  height: auto;
-  min-height: 120px;
-  position: relative;
-  top: -1px;
-}
+  .separator-waves-top {
+    height: 101px;
+    width: 100%;
+  }
 
-.separator {
-  position: absolute;
-  top: 0;
+  .separator-waves-bottom {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .horizontal-scroll {
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: auto;
   white-space: nowrap;
-
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  padding: 0px 50px;
   background: black;
   color: white;
   font-weight: 700;
+
+  .scroll-container {
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.9s ease-in-out;
+    gap: 40px;
+
+    .image-container {
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+    }
+  }
 }
 
-.scroll-container {
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.9s ease-in-out;
+.default-horizontal-optns {
+  justify-content: center;
+  height: 45px;
+  margin-bottom: 15px;
 }
 
-.image-container {
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.separator-waves-top {
-  height: 101px;
-  width: 100%;
-}
-
-.separator-waves-bottom {
-  height: 100%;
-  width: 100%;
+.product-horizontal-optns {
+  justify-content: flex-start;
+  margin-bottom: 0px;
 }
 
 @media (max-width: 768px) {
   .separator-waves-top {
-    height: 100px;
-    width: 190%;
+    height: 100px !important;
+    width: 190% !important;
   }
 
   .separator-waves-bottom {
-    width:190%
+    width:190% !important;
   }
 
   .parallax-container {
-    height: 600px;
+    height: 600px !important;
 
     .parallax-image {
-      height: 850px;
+      height: 850px !important;
     }
 
     .img-container {
-      height: 40%;
+      height: 40% !important;
     }
   }
 
   .separator-block-last {
-    min-height: 100px;
-    overflow: hidden;
+    min-height: 100px !important;
+    overflow: hidden !important;
 
     svg {
-      height: 110px;
-      width: 235%;
+      height: 110px !important;
+      width: 235% !important;
     }
   }
 }

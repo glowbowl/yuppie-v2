@@ -61,7 +61,10 @@ export class MainCarouselComponent implements OnInit, AfterViewInit {
 
   public nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.items.length;
-    this.currentProductSlide.emit(this.navigateRoute[this.currentIndex]?.routeParameter);
+    this.currentProductSlide.emit({
+      productCategory: this.navigateRoute[this.currentIndex]?.routeParameter,
+      index: this.currentIndex
+    });
     this.cdr.markForCheck();
   }
 
