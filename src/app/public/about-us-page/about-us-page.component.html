@@ -1,5 +1,5 @@
 <yup-main-carousel [items]="carouselItems" [showButton]="true" [showTitle]="false" [buttonText]="'collaboration' | translate" [navigateRoute]="carouselNavigationItems"></yup-main-carousel>
-<div class="max-w-screen-xl my-0 mx-auto w-11/12">
+<div class="max-w-screen-xl my-0 mx-auto w-11/12" *ngIf="isPresent">
   <div class="my-10 md:mt-20">
     <section class="flex flex-col items-center">
       <div class="flex flex-col items-center mb-0 md:mb-8">
@@ -10,7 +10,7 @@
           data-jos_once="false"
           data-jos_animationinverse="none"
           data-jos_timingfunction="ease"
-          data-jos_duration="0.4"
+          data-jos_duration="0.6"
         > {{ 'aboutUs' | translate }} </h1>
         <div class="flex items-center flex-col md:flex-row">
           <div class="flex flex-col items-center w-full md:w-2/3 mx-0 mb-10 md:mr-10 md:mb-0 jos"
@@ -20,7 +20,7 @@
             data-jos_once="false"
             data-jos_animationinverse="none"
             data-jos_timingfunction="ease"
-            data-jos_duration="0.4"
+            data-jos_duration="0.6"
           >
             <p class="text-xl md:text-2xl mb-6 font-light">
               {{ 'aboutUsPage.textFirst' | translate }}
@@ -30,10 +30,10 @@
             </p>
           </div>
           <yup-contact-block class="jos"
-            data-jos_animation="fade-left"
+            data-jos_animation="fade-up"
             data-jos_rootMargin_bottom="15%"
             data-jos_scrolldirection="down"
-            data-jos_once="false"
+            data-jos_once="true"
             data-jos_animationinverse="none"
             data-jos_timingfunction="ease"
             data-jos_duration="0.4"

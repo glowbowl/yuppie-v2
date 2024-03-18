@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { AllProductCarouselComponent } from '../../shared/all-product-carousel/all-product-carousel.component';
 import { Subject, takeUntil } from 'rxjs';
 import { ProductsService } from '../../shared/services/products.service';
@@ -6,21 +6,24 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 // @ts-ignore
 import JOS from "jos-animation";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'yup-item-page',
   standalone: true,
-  imports: [AllProductCarouselComponent, TranslateModule],
+  imports: [AllProductCarouselComponent, TranslateModule, CommonModule],
   templateUrl: './item-page.component.html',
   styleUrl: './item-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemPageComponent implements OnInit, OnDestroy {
+export class ItemPageComponent implements OnInit, OnDestroy, AfterViewInit {
   public currentItem: any;
   public carouselProductItems: any = [];
   public itemSpecs: any;
   public category: string = '';
   public itemName: string = '';
+
+  public isPresent = false;
 
   private ngUnsubscribe$ = new Subject();
 
@@ -40,6 +43,12 @@ export class ItemPageComponent implements OnInit, OnDestroy {
       this.carouselProductItems = this.carouselProductItems.filter((item: any) => item.itemName !== this.itemName);
       this.cdr.markForCheck();
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.isPresent = true;
+    this.cdr.detectChanges();
+    JOS.refresh();
   }
 
   ngOnInit(): void {
