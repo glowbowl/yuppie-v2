@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -30,12 +31,13 @@ import JOS from "jos-animation";
   styleUrl: './product-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductPageComponent implements OnInit, OnDestroy {
+export class ProductPageComponent implements OnInit, OnDestroy, AfterViewInit {
   public carouselProductItems: any = [];
   public productGalery: string[] = [];
   public carouselItems: any = [];
   public category: string = '';
   public secondaryText: string = '';
+  public isPresent = false;
   private ngUnsubscribe$ = new Subject();
 
   constructor(
@@ -62,6 +64,12 @@ export class ProductPageComponent implements OnInit, OnDestroy {
         );
         this.cdr.markForCheck();
       });
+  }
+
+  ngAfterViewInit(): void {
+    this.isPresent = true;
+    this.cdr.detectChanges();
+    JOS.refresh();
   }
 
   ngOnInit(): void {

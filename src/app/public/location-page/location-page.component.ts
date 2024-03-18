@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MainCarouselComponent } from '../../shared/main-carousel/main-carousel.component';
 import { MapsComponentComponent } from '../../shared/maps-component/maps-component.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -23,7 +23,19 @@ import JOS from "jos-animation";
   styleUrl: './location-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LocationPageComponent implements OnInit {
+export class LocationPageComponent implements OnInit, AfterViewInit {
+  public isPresent = false;
+
+  constructor(
+    private cdr: ChangeDetectorRef,
+  ) {}
+
+  ngAfterViewInit(): void {
+    this.isPresent = true;
+    this.cdr.detectChanges();
+    JOS.refresh();
+  }
+
   ngOnInit(): void {
     JOS.init();
   }
